@@ -1,0 +1,5 @@
+# ignore packages installed by npm
+node_modues
+
+# ignore file(s)
+.DS_Store
