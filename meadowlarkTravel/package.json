@@ -1,0 +1,27 @@
+{
+  "name": "meadowlarktravel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/site/meadowlark.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Sandilem7789/100daysofcode.git"
+  },
+  "keywords": [
+    "meadowlark",
+    "server"
+  ],
+  "author": "Sandilem7789",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sandilem7789/100daysofcode/issues"
+  },
+  "homepage": "https://github.com/Sandilem7789/100daysofcode#readme"
+}
