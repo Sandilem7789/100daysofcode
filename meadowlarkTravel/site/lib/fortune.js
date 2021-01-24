@@ -1,4 +1,4 @@
-const express = require("express");
+//creating a module
 const fortuneCookies = [
     "Conquer your fears or they will conquer you.",
     "Rivers need springs.",
@@ -11,3 +11,5 @@ exports.getFortune = () => {
     const idx = Math.floor(Math.random() * fortuneCookies.length);
     return fortuneCookies[idx];
 };
+
+//lets see whether this is going to work or nah
