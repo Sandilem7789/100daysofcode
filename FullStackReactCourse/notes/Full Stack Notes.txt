@@ -1,0 +1,4 @@
+THREE TIER ARCHITECTURE
+    Presentation Tier
+    Logic Tier
+    Data Tier
