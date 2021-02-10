@@ -37,3 +37,16 @@ body {
 .navbar-dark {
     background-color: #512da8;
 }
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.nav-item {
+    border-top-right-radius: 20px;
+}
