@@ -53,6 +53,10 @@ body {
 
 .carousel {
     background: #512da8;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 30px;
+
 }
 .carousel-item {
     height: 300px;
@@ -62,4 +66,11 @@ body {
     top: 0;
     left: 0;            /*Positioning on the top left edge of the carousel element*/
     min-height: 300px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 30px;
+
+}
+
+#bookTable {
+    border-radius: 10px;
 }
