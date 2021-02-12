@@ -53,9 +53,7 @@ body {
 
 .carousel {
     background: #512da8;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 30px;
+    border-radius: 50px;
 
 }
 .carousel-item {
@@ -66,11 +64,19 @@ body {
     top: 0;
     left: 0;            /*Positioning on the top left edge of the carousel element*/
     min-height: 300px;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 30px;
-
+    border-radius: 50px;
+}
+.carousel-para {
+    background: rgba(81, 45, 168, 0.4);
+    border-radius: 10px;
+    margin-left: 20%;
+    text-align: justify;
 }
 
 #bookTable {
+    border-radius: 10px;
+}
+#tableTitle {
+    background: #512da8;
     border-radius: 10px;
 }
