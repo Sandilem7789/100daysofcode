@@ -50,3 +50,16 @@ body {
 .nav-item {
     border-top-right-radius: 20px;
 }
+
+.carousel {
+    background: #512da8;
+}
+.carousel-item {
+    height: 300px;
+}
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;            /*Positioning on the top left edge of the carousel element*/
+    min-height: 300px;
+}
