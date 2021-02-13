@@ -61,7 +61,7 @@
             </div>
         </div>
     </nav>
-    <!-- Modal -->
+    <!-- Login Modal -->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-md" role="content">
             <div class="modal-content">
@@ -108,6 +108,105 @@
         </div>
     </div>
 
+    <!-- Reserve Table Modal -->
+        <div class="modal fade" id="reserveModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-light">
+                        <h5 class="modal-title">Reserve a Table</h5>
+                        <button type="button" class="close text-light" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col col-md-3 text-center text-md-left">
+                                        <h5>
+                                            Number of Guests
+                                        </h5>
+                                    </div>
+                                    <div class="col-dm-8 offset-md-1 ml-md-4 offset-2">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3">3</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">4</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">5</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3">6</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-12 col-md-3 text-center text-md-left">
+                                        <h5>
+                                            Section
+                                        </h5>
+                                    </div>
+                                    <div class="col-md-8 offset-md-0 offset-2">
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-block btn-secondary active">
+                                                <input type="radio" name="nosmoke" id="non-smoking">Non-Smoking
+                                            </label>
+                                            <label class="btn btn-secondary">
+                                                <input type="radio" name="smoke" id="non-smoking">Smoking
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col col-md-3 text-center text-md-left">
+                                        <h5>
+                                            Date and Time
+                                        </h5>
+                                    </div>
+                                    <div class="col-12 col-md-8 offset-md-0">
+                                        <div class="row">
+                                            <div class="col-6 ">
+                                                <input type="date" class="form-control">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="time" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 mt-4">
+                                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" aria-pressed="true">
+                                            Reserve
+                                        </a>                                        
+                                    </div>
+                                    <div class="col-6 mt-4">
+                                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" data-dismiss="modal">
+                                            Cancel
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -122,9 +221,8 @@
                     <img src="img/img/logo.png" alt="logo" class="img-fluid">
                 </div>
                 <div class="col mt-5">
-                    <a href="#reserve" class="btn btn-block nav-link bg-warning text-dark" 
-                    data-toggle="tooltip" data-html="true" 
-                    title="Or Call us at <br><strong>+2782 933 7779</strong>" data-placement="bottom">
+                    <a href="" class="btn btn-block nav-link bg-warning text-dark" 
+                    data-toggle="modal" data-target="#reserveModal" data-placement="bottom">
                         <strong>Reserve Table</strong>
                     </a>
                 </div>
@@ -209,63 +307,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-9 col-sm-8 mt-5 mb-5 offset-md-2" id="reserve">
-            <div class="card" id="bookTable">
-                <h3 class="card-header text-white" id="tableTitle">Reserve a Table</h3>
-                <div class="card-body">
-                    <form action="" class="ml-1 mr-1 mb-2 align-self-center">
-                        <div class="row mt-3">
-                            <div class="col-12 col-sm-3">
-                                <h5>Number of Guests</h5>
-                            </div>
-                            <div class="col ml-3 custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline1">1</label>
-                            </div>
-                            <div class="col custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline2">2</label>
-                            </div>
-                            <div class="col custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline3">3</label>
-                            </div>
-                            <div class="col custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline4">4</label>
-                            </div>
-                            <div class="col custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline5" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline5">5</label>
-                            </div>
-                            <div class="col custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline6" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline6">6</label>
-                            </div>
-                            <div class="col-md-2">
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-3">
-                                <h5>Date and Time</h5>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="date" class="form-control mb-3 mb-md-0">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="time" class="form-control mb-3 mb-md-0">
-                            </div>
-                        </div>
-                        <div class="row mt-md-3 ml-1">
-                            <button  class="btn bg-primary text-white col-5 col-md-3 offset-md-3" type="button">
-                                <h5>Reserve</h5>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-            </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -313,12 +355,6 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        /* JQuery Syntax */
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </body>
 
 </html>
