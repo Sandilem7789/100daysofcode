@@ -80,3 +80,9 @@ body {
     background: #512da8;
     border-radius: 10px;
 }
+
+#carouselButton {
+    right: 0%;
+    position: absolute;
+    bottom: 0px;
+}
