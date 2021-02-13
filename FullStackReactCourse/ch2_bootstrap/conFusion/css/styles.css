@@ -53,7 +53,7 @@ body {
 
 .carousel {
     background: #512da8;
-    border-radius: 50px;
+    border-radius: 10px;
 
 }
 .carousel-item {
@@ -64,7 +64,7 @@ body {
     top: 0;
     left: 0;            /*Positioning on the top left edge of the carousel element*/
     min-height: 300px;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 .carousel-para {
     background: rgba(81, 45, 168, 0.4);
@@ -85,4 +85,5 @@ body {
     right: 0%;
     position: absolute;
     bottom: 0px;
+    border-radius: 10px;
 }
