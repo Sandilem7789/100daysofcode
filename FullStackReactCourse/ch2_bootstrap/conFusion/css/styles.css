@@ -80,3 +80,8 @@ body {
     background: #512da8;
     border-radius: 10px;
 }
+
+#reserveModal {
+    border-radius: 20px;
+    background-color: rgba(63, 62, 29, 0.7);
+}
