@@ -34,6 +34,7 @@ body {
   padding: 10px; }
 
 .carousel {
+<<<<<<< HEAD
   background: #512da8; }
   .carousel .carousel-item {
     height: 300px; }
@@ -47,3 +48,38 @@ body {
   right: 0px;
   position: absolute;
   bottom: 0px; }
+=======
+    background: #512da8;
+    border-radius: 50px;
+
+}
+.carousel-item {
+    height: 300px;
+}
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;            /*Positioning on the top left edge of the carousel element*/
+    min-height: 300px;
+    border-radius: 50px;
+}
+.carousel-para {
+    background: rgba(81, 45, 168, 0.4);
+    border-radius: 10px;
+    margin-left: 20%;
+    text-align: justify;
+}
+
+#bookTable {
+    border-radius: 10px;
+}
+#tableTitle {
+    background: #512da8;
+    border-radius: 10px;
+}
+
+#reserveModal {
+    border-radius: 20px;
+    background-color: rgba(63, 62, 29, 0.7);
+}
+>>>>>>> assignment3
