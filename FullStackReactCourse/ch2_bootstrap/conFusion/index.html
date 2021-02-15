@@ -190,14 +190,14 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6 mt-4">
-                                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" aria-pressed="true">
-                                            Reserve
-                                        </a>                                        
-                                    </div>
-                                    <div class="col-6 mt-4">
                                         <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" id="cancelTableBtn">
                                             Cancel
                                         </a>
+                                    </div>
+                                    <div class="col-6 mt-4">
+                                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" id="reserveBtn" aria-pressed="true">
+                                            Reserve
+                                        </a>                                        
                                     </div>
                                 </div>
                             </div>
@@ -362,6 +362,7 @@
             /* Reserve Table Modal */
             $("#reserveBtn").click(() => {
                 $("#reserveModal").modal();
+                console.log("show modal")
             });
 
             //X
