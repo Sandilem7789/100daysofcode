@@ -1,89 +1,86 @@
 .row-header {
-    margin: 0px auto;
-    padding: auto;
-}
-
-.row-content {
-    margin: 0px auto;
-    padding: 50px 0px 50px 0px;
-    border-bottom: 1px ridge;
-    min-height: 400px;
-}
+  margin: 0px auto;
+  padding: 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px; }
 
 .footer {
-    background-color: #d1c4e9;
-    margin: 0px auto;
-    padding: 20px 0px 20px 0px;
-}
+  background-color: #d1c4e9;
+  margin: 0px auto;
+  padding: 20px 0px; }
 
 .jumbotron {
-    padding: 70px 30px 70px 30px;
-    margin: 0px auto;
-    background: #9575cd;
-    color: floralwhite;
-}
+  margin: 0px auto;
+  padding: 70px 30px;
+  background: #9575cd;
+  color: floralwhite; }
 
-.address {
-    font-size: 80%;
-    margin: 0px;
-    color: #0f0f0f;
-}
+address {
+  font-size: 80%;
+  margin: 0px;
+  color: #0f0f0f; }
 
 body {
-    padding: 50px 0px 0px 0px;
-    z-index: 0;
-}
+  padding: 50px 0px 0px 0px;
+  z-index: 0; }
+
+#loginModal .modal-header {
+  background-color: #512da8;
+  color: white; }
+
+#loginModal #closeModal {
+  color: #ddd; }
+
+#loginModal .modal-body {
+  background-color: #d1c4e9; }
+  #loginModal .modal-body label {
+    color: black; }
+  #loginModal .modal-body #signIn {
+    background-color: #512da8;
+    color: #ddd; }
+  #loginModal .modal-body #cancelLoginBtn {
+    background-color: red;
+    color: white; }
+
+#reserveModal .modal-header {
+  background-color: #512da8;
+  color: #ddd; }
+
+#reserveModal .modal-body {
+  background-color: #d1c4e9; }
 
 .navbar-dark {
-    background-color: #512da8;
-}
+  background-color: #512da8; }
 
 .tab-content {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px; }
 
-.nav-item {
-    border-top-right-radius: 20px;
-}
+.carousel .carousel-inner {
+  background: #512da8; }
 
-.carousel {
-    background: #512da8;
-    border-radius: 50px;
-
-}
-.carousel-item {
-    height: 300px;
-}
-.carousel-item img {
+.carousel .carousel-item {
+  height: 300px; }
+  .carousel .carousel-item img {
     position: absolute;
     top: 0;
-    left: 0;            /*Positioning on the top left edge of the carousel element*/
-    min-height: 300px;
-    border-radius: 50px;
-}
-.carousel-para {
-    background: rgba(81, 45, 168, 0.4);
-    border-radius: 10px;
-    margin-left: 20%;
-    text-align: justify;
-}
+    left: 0;
+    min-height: 300px; }
 
 #bookTable {
-    border-radius: 10px;
-}
+  border-radius: 10px; }
+
 #tableTitle {
-    background: #512da8;
-    border-radius: 10px;
-}
+  background: #512da8;
+  border-radius: 10px; }
 
 #reserveModal {
-    border-radius: 20px;
-    background-color: rgba(63, 62, 29, 0.7);
-}
+  border-radius: 20px;
+  background-color: rgba(63, 62, 29, 0.7); }
+
 #carouselButton {
-right: 0px;}
+  position: relative;
+  left: 60vw;
+  bottom: 3vh; }

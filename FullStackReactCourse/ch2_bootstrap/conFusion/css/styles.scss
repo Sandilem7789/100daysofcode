@@ -2,7 +2,7 @@ $lt-gray: #ddd;
 $backround-dark: #512da8;
 $background-light: #9575cd;
 $background-pale: #d1c4e9;
-
+$background-floralwhite: floralwhite;
 //Height Variables
 $carousel-item-height: 300px;
 
@@ -26,7 +26,7 @@ $carousel-item-height: 300px;
 .jumbotron {
     @include zero-margin(70px, 30px);
     background: $background-light;
-    color: floralwhite;
+    color: $background-floralwhite;
 }
 
 address {
@@ -37,6 +37,42 @@ address {
 body {
     padding: 50px 0px 0px 0px;
     z-index: 0;
+}
+
+//Modals
+//Login
+#loginModal {
+    .modal-header {
+        background-color: $backround-dark;
+        color: $background-floralwhite;
+    }
+    #closeModal {
+        color: $lt-gray;
+    }
+    .modal-body {
+        background-color: $background-pale;
+        label {
+            color: black;
+        }
+        #signIn {
+            background-color: $backround-dark;
+            color: $lt-gray;
+        }
+        #cancelLoginBtn {
+            background-color: red;
+            color: $background-floralwhite;
+        }
+    }
+}
+
+#reserveModal {
+    .modal-header {
+        background-color: $backround-dark;
+        color: $background-floralwhite;
+    }
+    .modal-body {
+        background-color: $background-pale;
+    }
 }
 
 .navbar-dark {
@@ -51,10 +87,12 @@ body {
 
 //Nesting selectors
 .carousel {
-    background: $backround-dark;
+    .carousel-inner {
+        background: $backround-dark;
+    }
     .carousel-item {
         height: $carousel-item-height;
-        img {
+        img{
             position: absolute;
             top: 0;
             left: 0;
@@ -62,8 +100,21 @@ body {
         }
     }
 }
-#carouseButton {
-    right: 0px;
-    position: absolute;
-    bottom: 0px;
+
+#bookTable {
+    border-radius: 10px;
+}
+#tableTitle {
+    background: #512da8;
+    border-radius: 10px;
+}
+
+#reserveModal {
+    border-radius: 20px;
+    background-color: rgba(63, 62, 29, 0.7);
+}
+#carouselButton {
+    position: relative;
+    left: 60vw;
+    bottom: 3vh;
 }

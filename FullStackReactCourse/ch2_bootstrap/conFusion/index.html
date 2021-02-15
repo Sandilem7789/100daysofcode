@@ -53,7 +53,7 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <a href="" data-toggle="modal" data-target="#loginModal">
+                    <a href="#" id="loginLink">
                         <span class="fa fa-sign-in"></span> <!--Font Awesome Icon-->
                         Login 
                     </a>
@@ -65,15 +65,15 @@
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-md" role="content">
             <div class="modal-content">
-                <div class="modal-header bg-dark text-light">
+                <div class="modal-header">
                     <h4 class="modal-title">
                         Login
                     </h4>
-                    <button type="button" class="close text-light" data-dismiss="modal">
+                    <button type="button" class="close" id="closeModal">
                         &times;
                     </button>
                 </div>
-                <div class="modal-body bg-secondary">
+                <div class="modal-body">
                     <form action="submit">
                         <div class="form-row py-2 text-light">
                             <label for="email" class="col-2 col-sm-2 offset-1">
@@ -98,8 +98,8 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-8 offset-4 offset-sm-3 align-self-center">
-                                <input type="button" value="Sign In" class="col-4 col-sm-5 btn-md btn-dark">
-                                <input type="button" value="Cancel" class="col-4 col-sm-5 btn-md btn-dark" data-dismiss="modal">
+                                <input type="button" value="Sign In" class="col-4 col-sm-5 btn-md" id="signIn">
+                                <input type="button" value="Cancel" class="col-4 col-sm-5 btn-md" id="cancelLoginBtn">
                             </div>
                         </div>
                     </form>
@@ -112,9 +112,9 @@
         <div class="modal fade" id="reserveModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header bg-dark text-light">
+                    <div class="modal-header text-light">
                         <h5 class="modal-title">Reserve a Table</h5>
-                        <button type="button" class="close text-light" data-dismiss="modal">
+                        <button type="button" class="close text-light" id="closeTableModal">
                             &times;
                         </button>
                     </div>
@@ -162,17 +162,10 @@
                                     </div>
                                     <div class="col-md-8 offset-md-0 offset-2">
                                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-<<<<<<< HEAD
                                             <label class="btn btn-block btn-success active">
                                                 <input type="radio" name="nosmoke" id="non-smoking">Non-Smoking
                                             </label>
                                             <label class="btn btn-danger">
-=======
-                                            <label class="btn btn-block btn-secondary active">
-                                                <input type="radio" name="nosmoke" id="non-smoking">Non-Smoking
-                                            </label>
-                                            <label class="btn btn-secondary">
->>>>>>> assignment3
                                                 <input type="radio" name="smoke" id="non-smoking">Smoking
                                             </label>
                                         </div>
@@ -202,7 +195,7 @@
                                         </a>                                        
                                     </div>
                                     <div class="col-6 mt-4">
-                                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" data-dismiss="modal">
+                                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" id="cancelTableBtn">
                                             Cancel
                                         </a>
                                     </div>
@@ -228,8 +221,7 @@
                     <img src="img/img/logo.png" alt="logo" class="img-fluid">
                 </div>
                 <div class="col mt-5">
-                    <a href="" class="btn btn-block nav-link bg-warning text-dark" 
-                    data-toggle="modal" data-target="#reserveModal" data-placement="bottom">
+                    <a href="#" class="btn btn-block nav-link bg-warning text-dark" id="reserveBtn">
                         <strong>Reserve Table</strong>
                     </a>
                 </div>
@@ -365,6 +357,39 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            /* Reserve Table Modal */
+            $("#reserveBtn").click(() => {
+                $("#reserveModal").modal();
+            });
+
+            //X
+            $("#closeTableModal").click(() => {
+                $("#reserveModal").modal("hide");
+            });
+
+            //Cancel Button
+            $("#cancelTableBtn").click(() => {
+                $("#reserveModal").modal("hide");
+            });
+            
+            /**********************************/
+            /* Login Modal */
+            $("#loginLink").click(() => {
+                $("#loginModal").modal();
+            });
+            
+            //X
+            $("#closeModal").click(() => {
+                $("#loginModal").modal("hide");
+            });
+            $("#cancelLoginBtn").click(() => {
+                $("#loginModal").modal("hide");
+            });
+
+        });
+    </script>
 </body>
 
 </html>
