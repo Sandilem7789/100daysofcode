@@ -98,8 +98,8 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-8 offset-4 offset-sm-3 align-self-center">
-                                <input type="button" value="Sign In" class="col-4 col-sm-5 btn-md" id="signIn">
                                 <input type="button" value="Cancel" class="col-4 col-sm-5 btn-md" id="cancelLoginBtn">
+                                <input type="button" value="Sign In" class="col-4 col-sm-5 btn-md" id="signIn">
                             </div>
                         </div>
                     </form>
@@ -189,15 +189,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6 mt-4">
-                                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" id="cancelTableBtn">
-                                            Cancel
-                                        </a>
-                                    </div>
-                                    <div class="col-6 mt-4">
-                                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block" id="reserveBtn" aria-pressed="true">
-                                            Reserve
-                                        </a>                                        
+                                    <div class="col-sm-8 offset-4 offset-sm-3 align-self-center">
+                                        <input type="button" value="Cancel" class="col-4 col-sm-5 btn-md" id="cancelTableBtn">
+                                        <input type="button" value="Reserve" class="col-4 col-sm-5 btn-md" id="reserveTableBtn">
                                     </div>
                                 </div>
                             </div>
@@ -358,6 +352,21 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
+        $('#mycarousel').carousel({interval: 200});
+        $('#carouselButton').click(function(){
+            if($('#carouselButton').children('span').hasClass('fa-pause')){
+                $('#mycarousel').carousel('pause');
+                $('#carouselButton').children('span').removeClass('fa-pause');
+                $('#carouselButton').children('span').addClass('fa-play')
+            }
+            else{
+                $('#mycarousel').carousel('cycle');
+                $('#carouselButton').children('span').removeClass('fa-play');
+                $('#carouselButton').children('span').addClass('fa-pause')
+            }
+        });
+
+        //Assignment 4
         $(document).ready(() => {
             /* Reserve Table Modal */
             $("#reserveBtn").click(() => {

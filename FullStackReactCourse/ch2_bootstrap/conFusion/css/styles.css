@@ -1,18 +1,22 @@
 .row-header {
   margin: 0px auto;
+  padding: 0px 0px; }
+
+.row-content {
+  margin: 0px auto;
   padding: 50px 0px;
   border-bottom: 1px ridge;
   min-height: 400px; }
 
 .footer {
-  background-color: #d1c4e9;
+  background-color: #D1C4E9;
   margin: 0px auto;
   padding: 20px 0px; }
 
 .jumbotron {
   margin: 0px auto;
   padding: 70px 30px;
-  background: #9575cd;
+  background: #9575CD;
   color: floralwhite; }
 
 address {
@@ -24,33 +28,8 @@ body {
   padding: 50px 0px 0px 0px;
   z-index: 0; }
 
-#loginModal .modal-header {
-  background-color: #512da8;
-  color: white; }
-
-#loginModal #closeModal {
-  color: #ddd; }
-
-#loginModal .modal-body {
-  background-color: #d1c4e9; }
-  #loginModal .modal-body label {
-    color: black; }
-  #loginModal .modal-body #signIn {
-    background-color: #512da8;
-    color: #ddd; }
-  #loginModal .modal-body #cancelLoginBtn {
-    background-color: red;
-    color: white; }
-
-#reserveModal .modal-header {
-  background-color: #512da8;
-  color: #ddd; }
-
-#reserveModal .modal-body {
-  background-color: #9575cd; }
-
 .navbar-dark {
-  background-color: #512da8; }
+  background-color: #512DA8; }
 
 .tab-content {
   border-left: 1px solid #ddd;
@@ -58,29 +37,27 @@ body {
   border-bottom: 1px solid #ddd;
   padding: 10px; }
 
-.carousel .carousel-inner {
-  background: #512da8; }
-
-.carousel .carousel-item {
-  height: 300px; }
-  .carousel .carousel-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 300px; }
-
-#bookTable {
-  border-radius: 10px; }
-
-#tableTitle {
-  background: #512da8;
-  border-radius: 10px; }
-
-#reserveModal {
-  border-radius: 20px;
-  background-color: rgba(63, 62, 29, 0.7); }
+.carousel {
+  background: #512DA8; }
+  .carousel .carousel-item {
+    height: 300px; }
+    .carousel .carousel-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px; }
 
 #carouselButton {
-  position: relative;
-  left: 60vw;
-  bottom: 3vh; }
+  right: 0px;
+  position: absolute;
+  bottom: 0px;
+  z-index: 1; }
+
+.modal-header {
+  background: #512DA8;
+  color: floralwhite; }
+  .modal-header .modal-body {
+    background: #9575CD;
+    color: floralwhite; }
+  .modal-header .close {
+    color: floralwhite; }
