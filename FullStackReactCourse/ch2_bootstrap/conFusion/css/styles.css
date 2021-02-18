@@ -53,11 +53,35 @@ body {
   bottom: 0px;
   z-index: 1; }
 
-.modal-header {
+#loginModal .modal-header {
   background: #512DA8;
   color: floralwhite; }
-  .modal-header .modal-body {
+  #loginModal .modal-header #closeModal {
+    color: floralwhite; }
+
+#loginModal .modal-body {
+  background: #D1C4E9; }
+  #loginModal .modal-body label {
+    color: #0f0f0f; }
+  #loginModal .modal-body #cancelLoginBtn {
+    background: crimson;
+    color: floralwhite; }
+  #loginModal .modal-body #signIn {
     background: #9575CD;
     color: floralwhite; }
-  .modal-header .close {
-    color: floralwhite; }
+
+#reserveModal .modal-header {
+  background: #512DA8;
+  color: floralwhite; }
+
+#reserveModal .modal-body {
+  background: #D1C4E9;
+  color: #0f0f0f; }
+
+#reserveModal #cancelTableBtn {
+  background: crimson;
+  color: floralwhite; }
+
+#reserveModal #reserveTableBtn {
+  background: #9575CD;
+  color: floralwhite; }

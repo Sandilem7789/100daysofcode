@@ -3,6 +3,7 @@ $background-dark: #512DA8;
 $background-light: #9575CD;
 $background-pale: #D1C4E9;
 $text: floralwhite;
+$body-text: #0f0f0f;
 
 // Height variables
 $carousel-item-height: 300px;
@@ -76,16 +77,45 @@ body{
     z-index: 1;
 }
 
-.modal-header {
-    background: $background-dark;
-    color: $text;
-    .modal-body {
-        background: $background-light;
+#loginModal {
+    .modal-header {
+        background: $background-dark;
         color: $text;
+        #closeModal {
+            color: $text;
+        }
     }
-    .close {
-        color: $text;
+    .modal-body {
+        background: $background-pale;
+        label {
+            color: $body-text;
+        }
+        #cancelLoginBtn {
+            background: crimson;
+            color: $text;
+        }
+        #signIn {
+            background: $background-light;
+            color: $text;
+        }
     }
 }
 
-
+#reserveModal {
+    .modal-header {
+        background: $background-dark;
+        color: $text;
+    }
+    .modal-body {
+        background: $background-pale;
+        color: $body-text;
+    }
+    #cancelTableBtn {
+        background: crimson;
+        color: $text;
+    }
+    #reserveTableBtn {
+        background: $background-light;
+        color: $text;
+    }
+}
