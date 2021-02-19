@@ -13,34 +13,34 @@ $('#carouselButton').click(function(){
 });
 
 //Assignment 4  
-$(document).ready(() => {
+$(() => {
     /* Reserve Table Modal */
-    $("#reserveBtn").click(() => {
+    $("#reserveBtn").on("click", () => {
         $("#reserveModal").modal();
         console.log("show modal")
     });
 
     //X
-    $("#closeTableModal").click(() => {
+    $("#closeTableModal").on("click",() => {
         $("#reserveModal").modal("hide");
     });
 
     //Cancel Button
-    $("#cancelTableBtn").click(() => {
+    $("#cancelTableBtn").on("click",() => {
         $("#reserveModal").modal("hide");
     });
     
     /**********************************/
     /* Login Modal */
-    $("#loginLink").click(() => {
+    $("#loginLink").on("click",() => {
         $("#loginModal").modal();
     });
     
     //X
-    $("#closeModal").click(() => {
+    $("#closeModal").on("click",() => {
         $("#loginModal").modal("hide");
     });
-    $("#cancelLoginBtn").click(() => {
+    $("#cancelLoginBtn").on("click",() => {
         $("#loginModal").modal("hide");
     });
 
