@@ -52,6 +52,7 @@
     "bootstrap-social": "^5.1.1",
     "bufferutil": "^4.0.1",
     "font-awesome": "^4.7.0",
+    "gulp-sass": "^3.1.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
     "utf-8-validate": "^5.0.2"
