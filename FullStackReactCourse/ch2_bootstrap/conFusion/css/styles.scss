@@ -31,7 +31,7 @@ $carousel-item-height: 300px;
 .jumbotron {
     @include zero-margin(70px,30px);
     background: $background-light ;
-    color:floralwhite;
+    color: $text;
 }
 
 address{
@@ -96,7 +96,7 @@ body{
         }
         #signIn {
             background: $background-light;
-            color: $text; 
+            color: $text;
         }
     }
 }

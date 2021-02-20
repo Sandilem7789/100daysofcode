@@ -161,7 +161,7 @@ module.exports = (grunt) => {
     grunt.loadNpmTasks("grunt-usemin");
 
     grunt.registerTask("css", ["sass"]);
-    grunt.registerTask("default", ["browserSync", "watch"]);
+    grunt.registerTask("default", ["browserSync", "watch"]);     //default task, wtch files and sync with the browser
     grunt.registerTask("build", [
         "clean",                                                //these task must be in order.
         "copy",
