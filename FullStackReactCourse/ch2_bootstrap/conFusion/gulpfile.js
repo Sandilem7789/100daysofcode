@@ -1,12 +1,13 @@
 "use strict";
-var gulp = require("gulp"), 
+var gulp = require("gulp"),                                    
     sass = require("gulp-sass"),
-    browserSync = require("browser-sync");
+    browserSync = require("browser-sync"),
+    del = require("del");                                       //this is going to be the clean task
 
     
     /* ADDING GULP TASKS FOR SASS AND BROWSER SYNC */
 gulp.task("sass", () => {                                       //remember node-sass npm script? we call these gulp tasks
-    return gulp.src("./css/*.scss")                            //take all scss file(s) in folder "css"
+    return gulp.src("./css/*.scss")                             //take all scss file(s) in folder "css"
     .pipe(sass().on("error", sass.logError))                    //sass that file, convert it frm scss syntax to css syntax
     .pipe(gulp.dest("./css"));                                  //then store the converted file in the css folder
 });
