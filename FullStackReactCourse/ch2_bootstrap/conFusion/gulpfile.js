@@ -35,3 +35,7 @@ gulp.task("browser-sync", () => {                               //synchronicity
 gulp.task("default", ["browser-sync"], () => {                  //default task
     gulp.start("sass:watch")
 });
+
+gulp.task("clean", () => {
+    return del([])
+});
