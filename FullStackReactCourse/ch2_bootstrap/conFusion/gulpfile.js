@@ -36,6 +36,12 @@ gulp.task("default", ["browser-sync"], () => {                  //default task
     gulp.start("sass:watch")
 });
 
-gulp.task("clean", () => {
-    return del([])
+gulp.task("clean", () => {                                      //cleaning the dist folder
+    return del(["dist"]); 
+});
+
+gulp.task("copyfonts", () => {                                  //
+    gulp.src(
+        "./node_modules/font-awesome/fonts/**/*.{ttf, woff, eof, svg}*")
+    .pipe(gulp.dest("./dist/fonts"));
 });
