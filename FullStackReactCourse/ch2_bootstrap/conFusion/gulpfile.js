@@ -1,8 +1,15 @@
 "use strict";
-var gulp = require("gulp"),                                    
+const gulp = require("gulp"),                                    
     sass = require("gulp-sass"),
     browserSync = require("browser-sync"),
-    del = require("del");                                       //this is going to be the clean task
+    del = require("del"),                                       //this is going to be the clean task
+    imagemin = require("gulp-imagemin"),
+    uglify = require("gulp-uglify"),
+    usemin = require("gulp-usemin"),
+    rev = require("gulp-rev"),
+    htmlmin = require("gulp-htmlmin"),
+    cleanCss = require("gulp-clean-css"),
+    flatmap = require("gulp-flatmap");
 
     
     /* ADDING GULP TASKS FOR SASS AND BROWSER SYNC */
@@ -40,8 +47,44 @@ gulp.task("clean", () => {                                      //cleaning the d
     return del(["dist"]); 
 });
 
-gulp.task("copyfonts", () => {                                  //
+gulp.task("copyfonts", () => {                                  //copying fonts
     gulp.src(
-        "./node_modules/font-awesome/fonts/**/*.{ttf, woff, eof, svg}*")
-    .pipe(gulp.dest("./dist/fonts"));
+        "./node_modules/font-awesome/fonts/**/*.{ttf,woff,eof,svg}*")
+    .pipe(gulp.dest("./dist/fonts/"));
+});
+
+/* COMPRESSING AND MINIFYING FILES */
+gulp.task("imagemin", () => {
+    return gulp.src("img/*.{png,gif,jpg}")
+    .pipe(imagemin({                                            //take files thru this function
+        optimazationLevel: 3,
+        progressive: true,
+        interlaced: true
+    }))
+    .pipe(gulp.dest("dist/img"));                               //destination folder
+});
+
+/* PREPARING THE DISTRIBUTION FOLDER AND FILES */
+gulp.task("usemin", () => {
+    return gulp.src("./*.html")
+    .pipe(flatmap((stream, file) => {
+        return stream.pipe(usemin({
+            css: [rev()],
+            html: [() => {
+                return htmlmin({
+                    collapseWhitespace: true
+                })
+            }],
+            js: [uglify(), rev()],
+            inlinejs: [uglify()],
+            inlinecss: [cleanCss(), "concat"]
+        }))
+    }))
+    .pipe(gulp.dest("dist/"));                                  //the error was here
+});
+
+
+/*BUILD TASK*/
+gulp.task("build", ["clean"], () => {                            // [] means start with this task
+    gulp.start("copyfonts", "imagemin", "usemin");
 });
