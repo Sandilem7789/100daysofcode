@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "bootstrap/dist/css/bootstrap.min.css"                   //importing from the node_modules folder
 import './index.css';
-import {Navbar, NavbarBrand} from "reactstrap";                              //boostrap component 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
