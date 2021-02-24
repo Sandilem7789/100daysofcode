@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+let App = () => {
   return (
     <div className="App">
       <header className="App-header">
