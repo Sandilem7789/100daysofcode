@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { 
-	Media,
+import {
 	Card, 
 	CardImg, 
 	CardImgOverlay, 
@@ -29,6 +28,7 @@ class Menu extends Component{
 					<CardImg width="100%" src={dish.image} alt={dish.name}/>
 					<CardBody>
 						<CardTitle>{dish.name}</CardTitle>
+						<CardText>{dish.description}</CardText>
 					</CardBody>
 				</Card>
 			);		
