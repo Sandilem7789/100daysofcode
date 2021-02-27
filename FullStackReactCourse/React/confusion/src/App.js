@@ -2,6 +2,7 @@ import React, {Component} from "react";
 //import logo from './logo.svg';
 import {Navbar, NavbarBrand} from "reactstrap";                              //boostrap component 
 import Menu from "./components/MenuComponent";
+import Detail from "./components/DishdetailComponent";
 import './App.css';
 import { DISHES } from "./shared/dishes";
 
@@ -12,18 +13,21 @@ class App extends Component {
 			dishes: DISHES
 		};
 	}
+
   	render() {
     	return(
       	<div>
-        		<Navbar dark color="primary">
+        	<Navbar dark color="primary">
          		<div className="container">
             		<NavbarBrand href="/">
                 		Ristorante Con Fusion
             		</NavbarBrand>
          	   </div>
-        		</Navbar>
-				<Menu dishes={this.state.dishes} />
+        	</Navbar>
+			<Menu dishes={this.state.dishes} />
+			
          </div>
+		 
       );
    }
 }
