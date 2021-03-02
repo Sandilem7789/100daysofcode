@@ -1,80 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-import React from "react";
+import React, {useEffect, useState} from "react";
 
-const date = new Date();
+const App = () => {
+	const APP_ID = "6c109b21";
+	const APP_KEY = "48f2c68bd1c0f696c70da300c484878b";
 
-class App extends React.Component {
-   constructor(props){
-		super(props);
-		this.state = {isLoggedIn: true};
-		this.handleLoginClick = this.handleLoginClick.bind(this);
-		this.handleLogoutClick = this.handleLogoutClick.bind(this);
+	useEffect(() => {
+		getRecipes();
+	}, []);
+
+	const getRecipes = async() => {
+		const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`);
+		const data = response.json();
+		console.log(data);
 	}
 
-	handleLoginClick() {
-		this.setState({isLoggedIn: true});
-	}
-
-	handleLogoutClick() {
-		this.setState({isLoggedIn: false});
-	}
-
-	render(){
-		const isLoggedIn = this.state.isLoggedIn;
-		let button;
-
-		if(isLoggedIn) {
-			button = <LogoutButton onClick={this.handleLogoutClick}/>;
-		}
-		else {
-			button = <LoginButton onClick={this.handleLoginClick}/>
-		}
-
-		return (
-			<div className="App">
-			  	<header className="App-header">
-				 	<img src={logo} className="App-logo" alt="logo" />
-				 	<p>
-						{date.toLocaleTimeString()}
-				 	</p>
-					<div>
-						<Greeting isLoggedIn={isLoggedIn}/>
-						{button}
-					</div>
-			  	</header>
-			</div>
-	 	);
-  	}	
-}
-
-function UserGreeting(props){
-	return <h1>Welcome Back!</h1>;
-}
-
-function GuestGreeting(props){
-	return <h1>Please Sign Up</h1>
-}
-
-function Greeting(props){
-	const isLoggedIn = props.isLoggedIn;
-	if(isLoggedIn) return <UserGreeting />;
-	return <GuestGreeting />
-}
-
-function LoginButton(props){
 	return(
-		<button onClick={props.onClick}>
-			Login
-		</button>
+		<div className="App">
+			<form className="search-form">
+				<input className="search-bar" type="text" />
+				<button className="search-button" type="submit">Search</button>
+			</form>
+		</div>
 	);
 }
 
-function LogoutButton(props){
-	return(
-		<button onClick={props.onClick}>
-			Logout
-		</button>
-	);
-}
 export default App;
