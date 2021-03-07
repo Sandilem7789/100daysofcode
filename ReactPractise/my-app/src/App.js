@@ -6,7 +6,6 @@ import AddTask from './components/AddTask';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
-
 const App = () => {
 	const [showAddTask, setShowAddTask] = useState(false)
 	const [tasks, setTasks] = useState([
