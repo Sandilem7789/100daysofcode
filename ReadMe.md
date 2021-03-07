@@ -5,3 +5,4 @@
     a. **./ch2_bootstrap/conFusion**: This is the root folder of the first part of the course where I was learning bootstrap, css flexbox, gulp, grunt, npm scripts amongst other things
 2. **meadowlarkTravel** : I was following a book here, the book turned out to be too dated to work with peacefully, npm modules.
 3. **mernLearn** : This is anouther dated book but a good step in the right direction: FullStack.
+4. **ReactPractise** : Here I was folowing a tutorial by TraversyMedia, a crash course in react.
