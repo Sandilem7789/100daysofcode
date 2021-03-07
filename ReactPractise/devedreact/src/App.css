@@ -16,8 +16,8 @@
 }
 
 .tweet {
-  height: 300px;
-  width: 300px;
+  height: 100px;
+  width: 400px;
   background: white;
   border-radius: 30px;
   display: flex;
