@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.app {
+  height: 100vh;
+  background: lightblue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tweet {
+  height: 300px;
+  width: 300px;
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.red {
+  color: red;
+  background: burlywood;
+  font-size: 50px;
+}
