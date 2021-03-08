@@ -14,20 +14,3 @@
   justify-content: space-around;
   align-items: center;
 }
-
-.tweet {
-  height: 100px;
-  width: 400px;
-  background: white;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.red {
-  color: red;
-  background: burlywood;
-  font-size: 50px;
-}
