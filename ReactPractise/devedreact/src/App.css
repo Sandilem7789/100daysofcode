@@ -10,7 +10,14 @@
 .app {
   height: 100vh;
   background: lightblue;
+  text-align: center;
+}
+
+.nav {
+  background-color: black;
+  color: white;
+  font-size: 200%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  height: 9vh;
 }
