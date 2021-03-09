@@ -12,7 +12,7 @@ function App() {
         <Button
           startIcon={<SaveIcon />}
           size="large"
-          variant="outlined" 
+          variant="contained" 
           color="secondary"
         >
           Hello Material
