@@ -7,7 +7,7 @@ class Menu extends React.Component {
         super(props);
 
         this.state = {
-            dishe: [
+            dishes: [
                 {
                     id: 0,
                     name:'Uthappizza',
@@ -57,7 +57,7 @@ class Menu extends React.Component {
                                 {dish.name}
                             </Media>
                             <p>
-                                {dish.discription}
+                                {dish.description}
                             </p>
                         </Media>
                     </Media>
