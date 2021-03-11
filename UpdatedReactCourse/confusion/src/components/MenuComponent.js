@@ -8,6 +8,8 @@ import {
     CardTitle  
 } from "reactstrap";
 
+import DishDetailComponent from "./DishDetailComponent";
+
 class Menu extends React.Component {
     constructor(props){
         //supply props to a super class
@@ -16,11 +18,6 @@ class Menu extends React.Component {
         this.state = {
             selectedDish: null
         }
-        console.log("Menu Component constructor is invoked");
-    }
-
-    componentDidMount() {
-        console.log("Menu Component did mount is invoked");
     }
 
 
@@ -31,17 +28,24 @@ class Menu extends React.Component {
     renderDish(dish) {
         if(dish != null) {
             return(
-                <Card>
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
-                    <CardBody>
-                        <CardTitle>
-                            {dish.name}
-                        </CardTitle>
-                        <CardText>
-                            {dish.description}
-                        </CardText>
-                    </CardBody>
-                </Card>
+                <div className="col">
+                    <div className="col-md-5 m-1">
+                        <Card>
+                            <CardImg width="100%" src={dish.image} alt={dish.name} />
+                            <CardBody>
+                                <CardTitle>
+                                    {dish.name}
+                                </CardTitle>
+                                <CardText>
+                                    {dish.description}
+                                </CardText>
+                            </CardBody>
+                        </Card>
+                    </div>
+                <div>
+                    {dish.comments.comment}
+                </div>
+            </div>
             );
         }
         else {
@@ -50,7 +54,6 @@ class Menu extends React.Component {
             );
         }
     }
-
 
     render(){
         const menu = this.props.dishes.map((dish) => {
@@ -62,8 +65,8 @@ class Menu extends React.Component {
                             <CardTitle tag="h2">
                                 {dish.name}
                             </CardTitle>
-                            
                         </CardImgOverlay>
+                        
                     </Card>
                 </div>
             )

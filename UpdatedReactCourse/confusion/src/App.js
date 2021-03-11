@@ -19,7 +19,7 @@ class App extends React.Component {
         <Navbar dark color="primary" >
           <div className="container">
             <NavbarBrand href="/">
-              Ristorante Con Fusion Madoda
+              Ristorante Con Fusion
             </NavbarBrand>
           </div>
         </Navbar>
