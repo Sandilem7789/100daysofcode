@@ -16,7 +16,13 @@ class Menu extends React.Component {
         this.state = {
             selectedDish: null
         }
+        console.log("Menu Component constructor is invoked");
     }
+
+    componentDidMount() {
+        console.log("Menu Component did mount is invoked");
+    }
+
 
     onDishSelect (dish) {
         this.setState({selectedDish: dish});
@@ -50,7 +56,7 @@ class Menu extends React.Component {
         const menu = this.props.dishes.map((dish) => {
             return(
                 <div key={dish.id} className="col-12 col-md-5 m-1">
-                    <Card tag="li" onClick={() => this.onDishSelect(dish)}>
+                    <Card onClick={() => this.onDishSelect(dish)}>
                         <CardImg width="100%" src={dish.image} alt={dish.name} />
                         <CardImgOverlay body className="ml-5">
                             <CardTitle tag="h2">
@@ -62,6 +68,7 @@ class Menu extends React.Component {
                 </div>
             )
         });
+        console.log("Menu Components Render is invoked");
         return (
             <div className="container">
                 <div className="row">
