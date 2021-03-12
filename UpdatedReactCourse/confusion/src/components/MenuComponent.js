@@ -8,18 +8,15 @@ import {
     CardTitle  
 } from "reactstrap";
 
-import DishDetailComponent from "./DishDetailComponent";
+import DishDetail from "./DishDetailComponent";
 
 class Menu extends React.Component {
     constructor(props){
         //supply props to a super class
         super(props);
 
-        this.state = {
-            selectedDish: null
-        }
+        this.state = { selectedDish: null }
     }
-
 
     onDishSelect (dish) {
         this.setState({selectedDish: dish});
@@ -28,24 +25,9 @@ class Menu extends React.Component {
     renderDish(dish) {
         if(dish != null) {
             return(
-                <div className="col">
-                    <div className="col-md-5 m-1">
-                        <Card>
-                            <CardImg width="100%" src={dish.image} alt={dish.name} />
-                            <CardBody>
-                                <CardTitle>
-                                    {dish.name}
-                                </CardTitle>
-                                <CardText>
-                                    {dish.description}
-                                </CardText>
-                            </CardBody>
-                        </Card>
-                    </div>
-                <div>
-                    {dish.comments.comment}
+                <div className="row">
+                    <DishDetail selectedDish={this.state.selectedDish}/>
                 </div>
-            </div>
             );
         }
         else {
@@ -66,12 +48,11 @@ class Menu extends React.Component {
                                 {dish.name}
                             </CardTitle>
                         </CardImgOverlay>
-                        
                     </Card>
                 </div>
             )
         });
-        console.log("Menu Components Render is invoked");
+        
         return (
             <div className="container">
                 <div className="row">
