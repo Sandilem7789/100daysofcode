@@ -25,7 +25,7 @@ class Menu extends React.Component {
     renderDish(dish) {
         if(dish != null) {
             return(
-                <div className="row">
+                <div>
                     <DishDetail selectedDish={this.state.selectedDish}/>
                 </div>
             );

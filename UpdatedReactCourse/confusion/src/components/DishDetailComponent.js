@@ -33,7 +33,6 @@ class DishDetail extends Component {
     }
     renderComments(array) {
         if (array.length != 0) {
-            console.log(this.state);
             return (
                 <div className="col-12 col-md-5 m-1">
                     <h4>Comments</h4>
