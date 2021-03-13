@@ -8,74 +8,71 @@ import {
     CardTitle
 } from 'reactstrap';
 
-class DishDetail extends Component {
+class DishDetail extends React.Component {
     constructor(props) {
         super(props);
-    }
+        this.state = {
 
+        }
+
+    }
     renderDish(dish) {
         if (dish != null)
             return (
-                <div className="col-12 col-md-5 m-1">
-                    <Card >
-                        <CardImg width="100%" src={dish.image} alt={dish.name} />
-                        <CardBody>
-                            <CardTitle>{dish.name}</CardTitle>
-                            <CardText>{dish.description}</CardText>
-                        </CardBody>
-                    </Card>
-                </div>
+                <Card>
+                    <CardImg top src={dish.image} alt={dish.name} />
+                    <CardBody>
+                        <CardTitle>{dish.name}</CardTitle>
+                        <CardText>{dish.description}</CardText>
+                    </CardBody>
+                </Card>
             );
         else
             return (
                 <div></div>
             );
     }
-    renderComments(array) {
-        if (array.length != 0) {
+    renderComments(dish) {
+        if (dish != null) {
+
             return (
-                <div className="col-12 col-md-5 m-1">
-                    <h4>Comments</h4>
-                    {array.map(comment => (
-                        <ul className="list-unstyled">
-                            <li>
-                                <p>{comment.comment}</p>
-                                <p>-- {comment.author} , {comment.date}</p>
-                            </li>
-                        </ul>
-                    )
-                    )}
-                </div>
-            );
+                <ul className="list-unstyled">
+                    {dish.comments.map((item) => (
+                        <div>
+                            <li key={item.id}>{item.comment}</li>
+                            <li key={item.author}>--{item.author} , {Date(item.date)} </li>
+                        </div>
+
+                    ))}
+                </ul>
+            )
+
         }
         else {
             return (
-                <div></div>
-            );
-
-        }
-    }
-    render() {
-        let dish;
-        if (this.props.selectedDish) {
-            dish = (
-                <div className="row">
-                    {this.renderDish(this.props.selectedDish)}
-                    {this.renderComments(this.props.selectedDish.comments)}
-                </div>
+                <h1>empty</h1>
             )
-        } else {
-            dish = <div></div>
         }
-        return (
-            <div className="container">
-                {dish}
-            </div>
-        );
+
+
     }
 
+    render() {
+        return (
+            <>
+                <div className='col-12 col-md-5 m-1'>
+                    {this.renderDish(this.props.dish)}
+                </div>
+                <div className='col-12 col-md-5 m-1'>
+                <h4>Comments</h4>
+
+                    {this.renderComments(this.props.dish)}
+
+                </div>
+            </>
 
 
+        )
+    }
 }
-
 export default DishDetail;
