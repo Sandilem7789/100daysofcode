@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 * {
     transition-duration: 3000ms;
@@ -14,6 +15,14 @@
     font-size: 4vh;
     cursor: pointer;
     width: 45%;
+}
+
+.dish-description {
+    font-family: "Indie Flower";
+    font-size: 3vh;
+    background: rgba(231, 222, 222, 0.4);
+    padding: 0;
+    margin: 0;
 }
 
 .dish-title:hover {

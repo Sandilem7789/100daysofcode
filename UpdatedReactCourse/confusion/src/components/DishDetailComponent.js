@@ -19,7 +19,7 @@ class DishDetail extends React.Component {
                     <CardImg src={dish.image} alt={dish.name} />
                     <CardBody>
                         <CardTitle className="nav-text">{dish.name}</CardTitle>
-                        <CardText>{dish.description}</CardText>
+                        <CardText className="dish-description">{dish.description}</CardText>
                     </CardBody>
                 </Card>
             );
