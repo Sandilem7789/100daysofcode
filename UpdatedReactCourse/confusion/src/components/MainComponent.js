@@ -26,7 +26,7 @@ class Main extends React.Component {
         <div>
             <Navbar dark color="primary" >
             <div className="container">
-                <NavbarBrand href="/">
+                <NavbarBrand href="/" className="nav-text">
                     Ristorante Con Fusion
                 </NavbarBrand>
             </div>
@@ -36,11 +36,8 @@ class Main extends React.Component {
                 onClick={(dishId) => this.onDishSelect(dishId)}
             />
             {/*Select all dishes where the dish id matches the selected dish*/}
-            
-            <div className="row">
-                <DishDetail dish={
-                    this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]}   />
-            </div>
+
+            <DishDetail dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]}   />
         </div>
         );
     }

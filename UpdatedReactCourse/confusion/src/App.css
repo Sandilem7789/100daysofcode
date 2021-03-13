@@ -1,12 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+
+* {
+    transition-duration: 3000ms;
+}
+
 .dish-title {
     text-align: center;
+    background: rgba(133, 164, 223, 0.8);
     transition-duration: 150ms;
+    border-radius: 5px;
+    font-family: "Redressed";
+    color: rgb(250, 252, 251);
+    font-size: 4vh;
+    cursor: pointer;
+    width: 45%;
 }
 
 .dish-title:hover {
-    background: rgba(50, 50, 50, 0.4);
+    background: rgba(129, 8, 8, 0.4);
     border-radius: 10px;
-    color: white;
-    padding-bottom: 20px;
+    color: rgb(236, 225, 161);
+    padding-bottom: 5px;
 }
 
+.nav-text {
+    font-family: "Redressed";
+    font-size: 5vh;
+}
+
+@media(max-width: 765px){
+    .dish-title {
+        background: rgba(129, 8, 8, 0.4);
+        border-radius: 10px;
+        color: rgb(236, 225, 161);
+        padding-bottom: 5px;
+    }
+
+    .dish-title:hover {
+        background: rgba(64, 136, 231, 0.3);
+        border-radius: 10px;
+        color: rgb(56, 59, 33);
+        padding-bottom: 5px;
+    }
+}
