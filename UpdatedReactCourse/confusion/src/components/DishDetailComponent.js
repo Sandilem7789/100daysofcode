@@ -9,11 +9,11 @@ import {
 
 class DishDetail extends React.Component {
     componentDidMount(){
-        console.log("Dish Detail Component Did Mount Invoked!");
+        console.log("Dish Detail componentDidMount() Invoked!");
     }
 
     componentDidUpdate() {
-        console.log("Dish Detail componentDidUpdate invoked");
+        console.log("Dish Detail componentDidUpdate() invoked");
     }
 
     constructor(props) {

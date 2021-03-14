@@ -9,6 +9,15 @@ import {
 import DishDetail from "./DishDetailComponent"
 
 class Menu extends React.Component {
+    constructor(props) { 
+        super(props);
+        console.log("Menu Component Constructor Invoked");
+    }
+
+    componentDidMount(){
+        console.log("Menu componentDidMount() invoked");
+    }
+
     renderDish(dish) {
         if(dish != null) {
             return(
