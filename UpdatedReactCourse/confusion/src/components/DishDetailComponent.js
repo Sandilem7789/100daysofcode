@@ -8,6 +8,14 @@ import {
 } from 'reactstrap';
 
 class DishDetail extends React.Component {
+    componentDidMount(){
+        console.log("Dish Detail Component Did Mount Invoked!");
+    }
+
+    componentDidUpdate() {
+        console.log("Dish Detail componentDidUpdate invoked");
+    }
+
     constructor(props) {
         super(props);
         this.state = {}
@@ -29,8 +37,8 @@ class DishDetail extends React.Component {
         if (dish != null) {
             return (
                 <div>
-                    <h4>Comments</h4>
-                    <ul className="list-unstyled">
+                    <h2 className="comments">Comments</h2>
+                    <ul className="list-unstyled comments-list">
                         {dish.comments.map((item) => (
                             <div key={item.id}>
                                 <li>{item.comment}</li>
@@ -49,15 +57,19 @@ class DishDetail extends React.Component {
     }
 
     render() {
+        console.log("dishDetail render Invoked");
         return (
-            <div className="row offset-1">
-                <div className="col-12 col-md-4 m-1">
-                    {this.renderDish(this.props.dish)}
-                </div>
-                <div className="col-12 col-md-5 m-1 offset-1">
-                    {this.renderComments(this.props.dish)}
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderDish(this.props.dish)}
+                    </div>
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderComments(this.props.dish)}
+                    </div>
                 </div>
             </div>
+            
         )
     }
 }
