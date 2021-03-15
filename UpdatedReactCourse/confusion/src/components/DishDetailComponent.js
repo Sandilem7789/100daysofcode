@@ -8,18 +8,8 @@ import {
 } from 'reactstrap';
 
 class DishDetail extends React.Component {
-    componentDidMount(){
-        console.log("Dish Detail componentDidMount() Invoked!");
-    }
+    
 
-    componentDidUpdate() {
-        console.log("Dish Detail componentDidUpdate() invoked");
-    }
-
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
     renderDish(dish) {
         if (dish != null)
             return (

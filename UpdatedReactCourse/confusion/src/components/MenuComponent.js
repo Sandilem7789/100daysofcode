@@ -6,20 +6,41 @@ import {
     CardTitle  
 } from "reactstrap";
 
-import DishDetail from "./DishDetailComponent"
+//import DishDetail from "./DishDetailComponent"
 
-class Menu extends React.Component {
-    constructor(props) { 
-        super(props);
-        console.log("Menu Component Constructor Invoked");
-    }
+function RenderMenuItem({ dish, onClick }){
+    return(
+        <Card key={dish.id} onClick={() => onClick(dish.id)}>
+            <CardImg width="100%" src={dish.image} alt={dish.name} />
+            <CardImgOverlay>
+                <CardTitle tag="h2" className="dish-title">
+                    {dish.name}
+                </CardTitle>
+            </CardImgOverlay>
+        </Card>
+    );
+}
 
-    componentDidMount(){
-        console.log("Menu componentDidMount() invoked");
-    }
+const Menu = (props) => {
+    const menu = props.dishes.map((dish) => {
+        return(
+            <div key={dish.id} className="col-12 col-md-5 m-1">
+                <RenderMenuItem dish={dish} onClick={props.onClick} />
+            </div>
+        )
+    });
 
-    renderDish(dish) {
-        if(dish != null) {
+    return(
+        <div className="container">
+            <div className="row">
+                {menu}
+            </div>
+            
+        </div>
+    )
+        {/*
+        
+            if(dish != null) {
             return(
                 <div>
                     <DishDetail selectedDish={this.state.selectedDish}/>
@@ -31,34 +52,8 @@ class Menu extends React.Component {
                 <div></div>
             );
         }
-    }
-
-    render(){
-        console.log("menu component render invoked");
-        const menu = this.props.dishes.map((dish) => {
-            return(
-                <div key={dish.id} className="col-12 col-md-5 m-1">
-                    <Card key={dish.id} onClick={() => this.props.onClick(dish.id)}>
-                        <CardImg width="100%" src={dish.image} alt={dish.name} />
-                        <CardImgOverlay>
-                            <CardTitle tag="h2" className="dish-title">
-                                {dish.name}
-                            </CardTitle>
-                        </CardImgOverlay>
-                    </Card>
-                </div>
-            )
-        });
         
-        return (
-            <div className="container">
-                <div className="row">
-                    {menu}
-                </div>
-                
-            </div>
-        )
-    }
+        */}
 }
-
+    
 export default Menu
