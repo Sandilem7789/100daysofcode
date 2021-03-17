@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 * {
-    transition-duration: 3000ms;
+    transition-duration: 1500ms;
 }
 
 /*____START OF CSS FROM PROF JOGESH_________*/
@@ -38,10 +38,20 @@ address{
 
 .navbar-dark {
     background-color: #512DA8;
-}
+}   
 
 /*___END OF CSS FROM PROF JOGESH__________*/
+.nav-link {
+    transition-duration: 1000ms;
+    border-bottom: solid 1px #512DA8;
+    border-top: solid 1px #512Da8;
+}
 
+.nav-link:hover {
+    border-bottom: solid 1px rgba(253, 253, 253, 0.3);
+    border-top: solid 1px rgba(252, 255, 255, 0.3);
+    border-radius: 1vh;
+}
 .dish-title {
     text-align: center;
     background: rgba(133, 164, 223, 0.8);
