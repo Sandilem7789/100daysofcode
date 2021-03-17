@@ -36,6 +36,7 @@ class Header extends React.Component {
                             />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
+                            {/*When you click on an option the toggle will kick and hide the thing*/}
                             <Nav navbar onClick={this.toggleNav}>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
