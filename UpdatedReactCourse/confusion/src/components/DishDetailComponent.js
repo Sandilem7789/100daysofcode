@@ -33,7 +33,11 @@ const RenderComments = ({comments}) => {
                     {comments.map((item) => (
                         <div key={item.id}>
                             <li>{item.comment}</li>
-                            <li key={item.author}>-- {item.author} , {item.date} <br/><br/> </li>
+                            <li key={item.author}>-- 
+                                {item.author}, 
+                                {item.date} 
+                                <br/><br/>
+                            </li>
                         </div>
                     ))}
                 </ul>
@@ -51,6 +55,21 @@ const DishDetail = (props) => {
     console.log("dishDetail render Invoked");
     return (
         <div className="container">
+            {/*Breadcrumbs should have got its own component in my view*/}
+            <div className="row">
+                <Breadcrumb className="cool-text col-12">
+                    <BreadcrumbItem>
+                        <Link to="/menu">Menu</Link>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem active>
+                        {props.dish.name}
+                    </BreadcrumbItem>
+                </Breadcrumb>
+                    <div className="col-12 cool-text">
+                        <h2>{props.dish.name}</h2><hr />
+                    </div>
+                
+            </div>
             <div className="row">
                 <div className="col-12 col-md-5 m-1">
                     <RenderDish dish={props.dish} />

@@ -8,7 +8,7 @@ import {
     BreadcrumbItem 
 } from "reactstrap";
 
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 //import DishDetail from "./DishDetailComponent"
 
@@ -39,7 +39,7 @@ const Menu = (props) => {
     return(
         <div className="container">
             <div className="row">
-                <Breadcrumb>
+                <Breadcrumb className="cool-text col-12">
                     <BreadcrumbItem>
                         <Link to="/home">
                             Home
@@ -48,12 +48,13 @@ const Menu = (props) => {
                     <BreadcrumbItem active>
                         Menu
                     </BreadcrumbItem>
-                    <div className="col-12">
-                        <h3>
-                            Menu
-                        </h3><hr />
-                    </div>
                 </Breadcrumb>
+                    <div className="col-12 cool-text">
+                        <h2>
+                            Menu
+                        </h2><hr />
+                    </div>
+                
             </div>
             <div className="row">
                 {menu}
