@@ -1,11 +1,12 @@
 import React from 'react';
 import {
-    Card,
-    CardImg,
-    CardText,
-    CardBody,
-    CardTitle
+    Card, CardImg,
+    CardText, CardBody,
+    CardTitle, Breadcrumb,
+    BreadcrumbItem
 } from 'reactstrap';
+
+import { Link } from "react-router-dom";
 
 
     
@@ -23,13 +24,13 @@ function RenderDish({dish}) {
     else return(<></>);
 }
 
-const RenderComments = ({dish}) => {
-    if (dish != null) {
+const RenderComments = ({comments}) => {
+    if (comments != null) {
         return (
             <div>
                 <h2 className="comments">Comments</h2>
                 <ul className="list-unstyled comments-list">
-                    {dish.comments.map((item) => (
+                    {comments.map((item) => (
                         <div key={item.id}>
                             <li>{item.comment}</li>
                             <li key={item.author}>-- {item.author} , {item.date} <br/><br/> </li>
@@ -55,7 +56,7 @@ const DishDetail = (props) => {
                     <RenderDish dish={props.dish} />
                 </div>
                 <div className="col-12 col-md-5 m-1">
-                    <RenderComments dish={props.dish} />
+                    <RenderComments comments={props.comments} />
                 </div>
             </div>
         </div>
