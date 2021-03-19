@@ -9,9 +9,9 @@ function RenderCard({item}) {
         <Card>
             <CardImg src={item.image} alt={item.name} />
             <CardBody>
-            <CardTitle className="nav-text" tag="h3">{item.name}</CardTitle>
-            {item.designation ? <CardSubtitle className="dish-description" tag="h3">{item.designation}</CardSubtitle> : null }
-            <CardText className="comments" tag="h4">{item.description}</CardText>
+                <CardTitle className="nav-text" tag="h3">{item.name}</CardTitle>
+                    {item.designation ? <CardSubtitle className="dish-description" tag="h3">{item.designation}</CardSubtitle> : null }
+                <CardText className="comments" tag="h4">{item.description}</CardText>
             </CardBody>
         </Card>
     );

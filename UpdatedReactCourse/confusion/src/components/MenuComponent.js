@@ -49,12 +49,11 @@ const Menu = (props) => {
                         Menu
                     </BreadcrumbItem>
                 </Breadcrumb>
-                    <div className="col-12 cool-text">
-                        <h2>
-                            Menu
-                        </h2><hr />
-                    </div>
-                
+                <div className="col-12 cool-text">
+                    <h2>
+                        Menu
+                    </h2><hr />
+                </div>
             </div>
             <div className="row">
                 {menu}
