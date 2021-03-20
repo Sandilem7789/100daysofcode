@@ -21,7 +21,6 @@ const RenderLeader = (props) => {
             </Media>
         );
     });
-
     return(
         <div>
             {leaders}
