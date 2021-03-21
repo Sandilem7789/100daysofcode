@@ -35,6 +35,7 @@ class Contact extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
     }
 
     handleInputChange(event){
@@ -75,17 +76,35 @@ class Contact extends React.Component {
         //FIRST NAME
         if(this.state.touched.firstname && firstname.length < 3)
             errors.firstname = "First name must have at least 3 characters";
-        else if (this.state.touched.firstname && firstname > 15)
+        else if (this.state.touched.firstname && firstname.length > 5)
             errors.firstname = "First name must not be more than 15 characters";
         
         //LAST NAME
         if(this.state.touched.lastname && lastname.length < 3)
             errors.lastname = "First name must have at least 3 characters";
-        else if (this.state.touched.lastname && lastname > 15)
+        else if (this.state.touched.lastname && lastname.length > 15)
             errors.lastname = "First name must not be more than 15 characters";
+
+        //TELEPHONE NUMBER
+        const reg = /^\d+$/;
+
+        if(this.state.touched.telnum && !reg.test(telnum))
+            errors.telnum = "Telephone number should contain numbers only";
+
+        //EMAIL
+        if(this.state.touched.email && email.split("").filter(x => x === "@").length !== 1)
+            errors.email = `Email should contain a "@" `;
+
+        return errors;
     }
 
     render(){
+        const errors = this.validate(
+            this.state.firstname,
+            this.state.lastname,
+            this.state.telnum,
+            this.state.email,
+        )
         return(
             <div className="container">
                 <div className="row">
@@ -148,8 +167,12 @@ class Contact extends React.Component {
                                         name="firstname"
                                         placeholder="First Name"
                                         value={this.state.firstname}
+                                        valid={errors.firstname === ""}
+                                        invalid={errors.firstname !== ""}
                                         onChange={this.handleInputChange}
+                                        onBlur={this.handleBlur("firstname")}
                                     />
+                                    <FormFeedback>{errors.firstname}</FormFeedback>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
@@ -163,8 +186,12 @@ class Contact extends React.Component {
                                         name="lastname"
                                         placeholder="Last Name"
                                         value={this.state.lastname}
+                                        valid={errors.lastname === ""}
+                                        invalid={errors.lastname !== ""}
                                         onChange={this.handleInputChange}
+                                        onBlur={this.handleBlur("lastname")}
                                     />
+                                    <FormFeedback>{errors.lastname}</FormFeedback>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
@@ -178,8 +205,12 @@ class Contact extends React.Component {
                                         name="telnum"
                                         placeholder="Tel. Number"
                                         value={this.state.telnum}
+                                        valid={errors.telnum === ""}
+                                        invalid={errors.telnum !== ""}
                                         onChange={this.handleInputChange}
+                                        onBlur={this.handleBlur("telnum")}
                                     />
+                                    <FormFeedback>{errors.telnum}</FormFeedback>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
@@ -193,8 +224,12 @@ class Contact extends React.Component {
                                         name="email"
                                         placeholder="email"
                                         value={this.state.email}
+                                        valid={errors.email === ""}
+                                        invalid={errors.email !== ""}
                                         onChange={this.handleInputChange}
+                                        onBlur={this.handleBlur("email")}
                                     />
+                                    <FormFeedback>{errors.email}</FormFeedback>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
