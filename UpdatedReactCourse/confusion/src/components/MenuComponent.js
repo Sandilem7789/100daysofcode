@@ -61,22 +61,7 @@ const Menu = (props) => {
             
         </div>
     )
-        {/*
         
-            if(dish != null) {
-            return(
-                <div>
-                    <DishDetail selectedDish={this.state.selectedDish}/>
-                </div>
-            );
-        }
-        else {
-            return (
-                <div></div>
-            );
-        }
-        
-        */}
 }
     
 export default Menu

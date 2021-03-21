@@ -29,7 +29,13 @@ class Contact extends React.Component {
     }
 
     handleInputChange(event){
-
+        const target = event.target;
+        const value = target.type === "checkbox" ? target.checked : target.value;
+        const name = target.name;
+        
+        this.setState({
+            [name]: value
+        });
     }
 
     handleSubmit(event){
@@ -101,6 +107,7 @@ class Contact extends React.Component {
                                         name="firstname"
                                         placeholder="First Name"
                                         value={this.state.firstname}
+                                        onChange={this.handleInputChange}
                                     />
                                 </Col>
                             </FormGroup>
@@ -115,6 +122,7 @@ class Contact extends React.Component {
                                         name="lastname"
                                         placeholder="Last Name"
                                         value={this.state.lastname}
+                                        onChange={this.handleInputChange}
                                     />
                                 </Col>
                             </FormGroup>
@@ -129,6 +137,7 @@ class Contact extends React.Component {
                                         name="telnum"
                                         placeholder="Tel. Number"
                                         value={this.state.telnum}
+                                        onChange={this.handleInputChange}
                                     />
                                 </Col>
                             </FormGroup>
@@ -143,6 +152,7 @@ class Contact extends React.Component {
                                         name="email"
                                         placeholder="email"
                                         value={this.state.email}
+                                        onChange={this.handleInputChange}
                                     />
                                 </Col>
                             </FormGroup>
@@ -154,15 +164,20 @@ class Contact extends React.Component {
                                                 type="checkbox" 
                                                 name="agree"
                                                 checked={this.state.agree}
+                                                onChange={this.handleInputChange}
                                             /> {" "}
                                             <strong>May we contact you</strong>
                                         </Label>
                                     </FormGroup>
                                 </Col>
                                 <Col md={{size: 3, offset: 1}}>
-                                    <Input type="select" name="contactType" value={this.state.contactType} >
-                                        <option value="">Tel.</option>
-                                        <option value="">Email</option>
+                                    <Input 
+                                        type="select" name="contactType" 
+                                        value={this.state.contactType}
+                                        onChange={this.handleInputChange} 
+                                    >
+                                        <option>Tel.</option>
+                                        <option>Email</option>
                                     </Input>
                                 </Col>
                             </FormGroup>
@@ -177,12 +192,17 @@ class Contact extends React.Component {
                                         name="message"
                                         rows="12"
                                         value={this.state.message}
+                                        onChange={this.handleInputChange}
                                     />
                                 </Col>
                             </FormGroup>
                             <FormGroup>
                                 <Col md={{size:10, offset:2}}>
-                                    <Button type="submit" color="primary">
+                                    <Button 
+                                        type="submit"
+                                        color="primary"
+                                        onSubmit={this.handleSubmit}
+                                    >
                                         Send Feedback
                                     </Button>
                                 </Col>
