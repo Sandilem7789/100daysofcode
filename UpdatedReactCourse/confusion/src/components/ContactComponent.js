@@ -7,14 +7,17 @@ import {
     FormGroup,
     Label,
     Input,
-    Col
+    Col,
+    Row,
+    FormFeedback
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
 class Contact extends React.Component {
     constructor(props){
         super(props);
-        
+        //if a field's 'touched' attribute is false 
+        //then we wont need to validate it
         this.state = {
             firstname: "",
             lastname: "",
@@ -22,7 +25,13 @@ class Contact extends React.Component {
             email: "",
             agree: false,
             contactType: "Tel.",
-            message: ""
+            message: "",
+            touched: {
+                firstname: false,
+                lastname: false,
+                telnum: false,
+                email: false,
+            }
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -42,6 +51,38 @@ class Contact extends React.Component {
         console.log(`Current State is: ${JSON.stringify(this.state)}`);
         alert(`Current State is: ${JSON.stringify(this.state)}`);
         event.preventDefault();
+    }
+
+    handleBlur = (field) => (evt) => {
+        this.setState({
+            touched: {
+                ...this.state.touched,
+                [field]: true
+            }
+        });
+        console.log(evt);
+    }
+
+    validate(firstname, lastname, telnum, email){
+        const errors = {
+            firstname: "",
+            lastname: "",
+            telnum: "",
+            email: "",
+        }
+        
+        /*FRONT END VALIDATION*/
+        //FIRST NAME
+        if(this.state.touched.firstname && firstname.length < 3)
+            errors.firstname = "First name must have at least 3 characters";
+        else if (this.state.touched.firstname && firstname > 15)
+            errors.firstname = "First name must not be more than 15 characters";
+        
+        //LAST NAME
+        if(this.state.touched.lastname && lastname.length < 3)
+            errors.lastname = "First name must have at least 3 characters";
+        else if (this.state.touched.lastname && lastname > 15)
+            errors.lastname = "First name must not be more than 15 characters";
     }
 
     render(){
