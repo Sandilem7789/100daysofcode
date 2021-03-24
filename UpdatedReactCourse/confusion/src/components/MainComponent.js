@@ -2,8 +2,6 @@ import React from "react"
 import Menu from "./MenuComponent.js";
 import DishDetail from "./DishDetailComponent";
 
-
-
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
@@ -27,8 +25,6 @@ class Main extends React.Component {
     constructor(props){
         super(props);
     }
-
-    
 
     render() {
         const HomePage = () => {
