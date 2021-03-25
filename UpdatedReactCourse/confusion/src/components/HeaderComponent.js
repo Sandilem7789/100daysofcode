@@ -114,7 +114,7 @@ class Header extends React.Component {
                     </div>
                 </Jumbotron>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal} className="bg-primary">
                         Login
                     </ModalHeader>
                     <ModalBody>
@@ -130,7 +130,7 @@ class Header extends React.Component {
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" name="remember" innerRef={(input) => this.remember = input} />
-                                    Remember me
+                                    Remember me?
                                 </Label>
                             </FormGroup>
                             <Button type="submit" value="submit" color="primary">Login</Button>
