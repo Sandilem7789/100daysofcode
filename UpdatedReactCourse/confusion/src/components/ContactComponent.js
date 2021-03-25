@@ -11,22 +11,20 @@ import {
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 
+console.log("Tis is a step in the direction that iwanna take");
 class Contact extends React.Component {
     constructor(props){
         super(props);
         //if a field's 'touched' attribute is false 
         //then we wont need to validate it
         
-        }
+    }
         
-    
-
-
     handleSubmit(values){
         console.log(`Current State is: ${JSON.stringify(values)}`);
         alert(`Current State is: ${JSON.stringify(values)}`);
     }
-
+    
 
     render() {
         return(

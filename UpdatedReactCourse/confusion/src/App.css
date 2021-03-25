@@ -65,7 +65,7 @@ address{
 }
 
 .dish-description {
-    font-family: "Indie Flower";
+    font-family: "Indie Flower", sans-serif;
     font-size: 3vh;
     background: rgba(231, 222, 222, 0.4);
     padding: 0;
