@@ -62,7 +62,7 @@ class CommentForm extends React.Component {
                                         className="form-control block"
                                         
                                     >
-                                        <option value="1">1</option>
+                                        <option values="1">1</option>
                                         <option values="2">2</option>
                                         <option values="3">3</option>
                                         <option values="4">4</option>
@@ -119,6 +119,14 @@ class CommentForm extends React.Component {
                                         color="primary"
                                     >
                                         Comment
+                                    </Button>
+                                    {" "}
+                                    <Button 
+                                        type="button"
+                                        color="secondary"
+                                        onClick={this.toggleComment}
+                                    >
+                                        Close
                                     </Button>
                                 </Col>
                             </Row>
