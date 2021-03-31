@@ -17,7 +17,7 @@ export const fetchDishes = () => (dispatch) => {
 
     setTimeout(() => {
         dispatch(addDishes(DISHES));
-    }, 500);                           //wait two seconds: this is when we display the loading spinner from 'LoadingComponent'
+    }, 2000);                           //wait two seconds: this is when we display the loading spinner from 'LoadingComponent'
 }
 
 //this is an action object with type and no payload
