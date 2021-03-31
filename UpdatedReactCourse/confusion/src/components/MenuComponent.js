@@ -11,8 +11,6 @@ import {
 import { Link } from "react-router-dom";
 import { Loading } from "./LoadingComponent";
 
-
-
 function RenderMenuItem({ dish, onClick }){
     return(
         <Card key={dish.id}>
@@ -80,10 +78,9 @@ const Menu = (props) => {
                 <div className="row">
                     {menu}
                 </div>
-                
             </div>
         )
     }    
 }
-    
-export default Menu
+
+export default Menu;

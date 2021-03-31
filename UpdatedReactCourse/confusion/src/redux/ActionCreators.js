@@ -17,18 +17,20 @@ export const fetchDishes = () => (dispatch) => {
 
     setTimeout(() => {
         dispatch(addDishes(DISHES));
-    }, 2000);                           //wait two seconds: this is when we display the loading spinner from 'LoadingComponent'
+    }, 500);                           //wait two seconds: this is when we display the loading spinner from 'LoadingComponent'
 }
 
-
+//this is an action object with type and no payload
 export const dishesLoading = () => ({
     type: ActionTypes.DISHES_LOADING
 });
 
+//this is an action object with both type and payload
 export const dishesFailed = (errmess) => ({
     type: ActionTypes.DISHES_FAILED,
     payload: errmess
 });
+
 
 export const addDishes = (dishes) => ({
     type: ActionTypes.ADD_DISHES,
