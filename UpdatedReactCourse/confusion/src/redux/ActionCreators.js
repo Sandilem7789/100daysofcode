@@ -19,8 +19,26 @@ export const fetchDishes = () => (dispatch) => {
 
     //using Fetch
     return fetch(baseUrl + "dishes")
+        .then(response => {
+            //This is how to handle a response from a server
+            if(response.ok) {
+                return response;
+            }
+            else {
+                let error = new Error(`Error ${response.status}: ${response.statusText}`);
+                error.response = response;
+                throw error;
+            }
+            
+        },
+        //when the server doesnt respond, we handle the promise itself by putting a second variable..
+        error => {
+            const errmess = new Error(error.message);
+            throw errmess;
+        })
         .then(response => response.json())
-        .then(dishes => dispatch(addDishes(dishes)));       //pushing the response/dishes to the redux store making it persistant
+        .then(dishes => dispatch(addDishes(dishes)))      //pushing the response/dishes to the redux store making it persistant
+        .catch(error => dispatch(dishesFailed(error.message)));
 }
 
 //this is an action object with type but no payload
@@ -44,8 +62,26 @@ export const addDishes = (dishes) => ({
 export const fetchComments = () => (dispatch) => {
     //using Fetch
     return fetch(baseUrl + "comments")
+        .then(response => {
+            //This is how to handle a response from a server
+            if(response.ok) {
+                return response;
+            }
+            else {
+                let error = new Error(`Error ${response.status}: ${response.statusText}`);
+                error.response = response;
+                throw error;
+            }
+            
+        },
+        //when the server doesnt respond, we handle the promise itself by putting a second variable..
+        error => {
+            const errmess = new Error(error.message);
+            throw errmess;
+        })
         .then(response => response.json())
-        .then(comments => dispatch(addComments(comments)));       //pushing the response/comments to the redux store making it persistant
+        .then(comments => dispatch(addComments(comments)))       //pushing the response/comments to the redux store making it persistant
+        .catch(error => dispatch(commentsFailed(error.message)));       //catching error from the if else above
 }
 
 export const commentsFailed = (errmess) => ({
@@ -65,8 +101,26 @@ export const fetchPromos = () => (dispatch) => {
 
     //using Fetch
     return fetch(baseUrl + "promotions")
+        .then(response => {
+            //This is how to handle a response from a server
+            if(response.ok) {
+                return response;
+            }
+            else {
+                let error = new Error(`Error ${response.status}: ${response.statusText}`);
+                error.response = response;
+                throw error;
+            }
+            
+        },
+        //when the server doesnt respond, we handle the promise itself by putting a second variable..
+        error => {
+            const errmess = new Error(error.message);
+            throw errmess;
+        })
         .then(response => response.json())
-        .then(promos => dispatch(addPromos(promos)));       //pushing the response/promos to the redux store making it persistant
+        .then(promos => dispatch(addPromos(promos)))       //pushing the response/promos to the redux store making it persistant
+        .catch(error => dispatch(promosFailed(error.message)));
 }
 
 //taction object with type but no payload
