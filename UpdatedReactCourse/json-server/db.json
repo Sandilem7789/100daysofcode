@@ -201,6 +201,14 @@
       "comment": "It's your birthday, we're gonna party!",
       "author": "25 Cent",
       "date": "2011-12-02T17:57:28.556094Z"
+    },
+    {
+      "dishId": 1,
+      "rating": "3",
+      "author": "Mathenjwa",
+      "comment": "This is the best koda I have ever tasted\n",
+      "date": "2021-04-03T13:47:49.220Z",
+      "id": 20
     }
   ],
   "promotions": [
