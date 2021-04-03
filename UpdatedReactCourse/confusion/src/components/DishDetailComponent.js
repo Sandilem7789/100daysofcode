@@ -13,7 +13,10 @@ import { Control, LocalForm, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
 
 //assosiated with Redux Thunk
-import { Loading } from "./LoadingComponent"
+import { Loading } from "./LoadingComponent";
+
+//assosiated with CLIENT-SERVER Communication
+import { baseUrl } from "../shared/baseUrl";
 
 
 const required = (val) => val && val.length;    //checks whether the value is greater than 0
@@ -25,7 +28,7 @@ function RenderDish({dish}) {
     if (dish != null)
         return (
             <Card>
-                <CardImg src={dish.image} alt={dish.name} />
+                <CardImg src={baseUrl + dish.image} alt={dish.name} />
                 <CardBody>
                     <CardTitle className="nav-text">{dish.name}</CardTitle>
                     <CardText className="dish-description">{dish.description}</CardText>
