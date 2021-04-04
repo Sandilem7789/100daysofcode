@@ -7,6 +7,8 @@ import {
 
 import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
+/*Day 65: React Animations*/
+import { FadeTransform } from "react-animation-components";
 
 
 function RenderCard({item, isLoading, errMess}) {
@@ -22,14 +24,21 @@ function RenderCard({item, isLoading, errMess}) {
     }
     else{
         return(
-            <Card>
-                <CardImg src={baseUrl + item.image} alt={item.name} />
-                <CardBody>
-                    <CardTitle className="nav-text" tag="h3">{item.name}</CardTitle>
-                        {item.designation ? <CardSubtitle className="dish-description" tag="h3">{item.designation}</CardSubtitle> : null }
-                    <CardText className="comments" tag="h4">{item.description}</CardText>
-                </CardBody>
-            </Card>
+            <FadeTransform in 
+                transformProps={{
+                    exitTransform: "scale(0.5) translateY(-50%)"
+                }}
+            >
+                <Card>
+                    <CardImg src={baseUrl + item.image} alt={item.name} />
+                    <CardBody>
+                        <CardTitle className="nav-text" tag="h3">{item.name}</CardTitle>
+                            {item.designation ? <CardSubtitle className="dish-description" tag="h3">{item.designation}</CardSubtitle> : null }
+                        <CardText className="comments" tag="h4">{item.description}</CardText>
+                    </CardBody>
+                </Card>
+            </FadeTransform>
+            
         );
     }
 }

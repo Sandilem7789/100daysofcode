@@ -18,6 +18,9 @@ import { Loading } from "./LoadingComponent";
 //assosiated with CLIENT-SERVER Communication
 import { baseUrl } from "../shared/baseUrl";
 
+//associated with React animations: day65
+import { FadeTransform, Fade, Stagger } from "react-animation-components";
+
 
 const required = (val) => val && val.length;    //checks whether the value is greater than 0
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -27,13 +30,19 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
 function RenderDish({dish}) {
     if (dish != null)
         return (
-            <Card>
-                <CardImg src={baseUrl + dish.image} alt={dish.name} />
-                <CardBody>
-                    <CardTitle className="nav-text">{dish.name}</CardTitle>
-                    <CardText className="dish-description">{dish.description}</CardText>
-                </CardBody>
-            </Card>
+            <FadeTransform in 
+                transformProps={{
+                    exitTransform: "scale(0.5) translateY(-50%)"
+                }}
+            >
+                <Card>
+                    <CardImg src={baseUrl + dish.image} alt={dish.name} />
+                    <CardBody>
+                        <CardTitle className="nav-text">{dish.name}</CardTitle>
+                        <CardText className="dish-description">{dish.description}</CardText>
+                    </CardBody>
+                </Card>
+            </FadeTransform>
         );
     else return(<></>);
 }
@@ -44,16 +53,21 @@ const RenderComments = ({comments, postComment, dishId}) => {
             <div>
                 <h2 className="comments">Comments</h2>
                 <ul className="list-unstyled comments-list">
-                    {comments.map((item) => (
-                        <div key={item.id}>
-                            <li>{item.comment}</li>
-                            <li key={item.author}>-- 
-                                {item.author}, 
-                                {item.date} 
-                                <br/><br/>
-                            </li>
-                        </div>
-                    ))}
+                    <Stagger in>
+                        {comments.map((item) => {
+                            return(
+                                <Fade in>
+                                    <div key={item.id}>
+                                        <li>{item.comment}</li>
+                                        <li key={item.author}>-- 
+                                            {item.author}, 
+                                            {item.date} 
+                                            <br/><br/>
+                                        </li>
+                                    </div>
+                                </Fade>
+                        )})}
+                    </Stagger>
                 </ul>
                 <CommentForm dishId={dishId} postComment={postComment} />
             </div>

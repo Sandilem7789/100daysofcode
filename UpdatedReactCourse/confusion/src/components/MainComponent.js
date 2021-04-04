@@ -81,13 +81,13 @@ class Main extends React.Component {
         <div>
             <Header />
             <TransitionGroup>
-                <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+                <CSSTransition key={this.props.location.key} classNames="page" timeout={600}>
                     <Switch>
                         <Route path="/home" component={HomePage} />
+                        <Route exact path="/aboutus" component={() => <About leaders={this.props.leaders} />} />
                         <Route exact path="/menu" component={() => <Menu dishes={this.props.dishes} />}/>
                         <Route path="/menu/:dishId" component={DishWithId} />
                         <Route exact path="/contactus" component={() => <Contact resetFeedbackform={this.props.resetFeedback} />} />
-                        <Route exact path="/aboutus" component={() => <About leaders={this.props.leaders} />} />
                         <Redirect to="/home"  />
                     </Switch>
                 </CSSTransition>
