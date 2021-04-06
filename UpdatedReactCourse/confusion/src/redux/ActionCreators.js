@@ -52,6 +52,61 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
     });
 }
 
+//action creator for task 2: day 66/67
+export const addFeedback = (feedback) => ({
+    type: ActionTypes.ADD_FEEDBACK,
+    payload: feedback
+    
+});
+
+export const feedbackFailed = (errmess) => ({
+    type: ActionTypes.FEEDBACK_FILED,
+    payload: errmess
+});
+
+export const postFeedback = (firstname, lastname, telnum, email, agree, contactType, message) => (dispatch) => {
+    const newFeedback = {
+        firstname: firstname,
+        lastname: lastname,
+        telnum: telnum,
+        email: email,
+        agree: agree,
+        contactType: contactType,
+        message: message
+    }
+    newFeedback.date = new Date().toString();
+
+    return fetch(baseUrl + "feedback", {
+        method: "POST",
+        body: JSON.stringify(newFeedback),
+        headers: {
+            "Content-Type": "application/json"
+        },
+        credentials: "same-origin"
+    })
+    .then(response => {
+        if(response.ok) {
+            alert(response);
+            return response;
+        }
+        else {
+            let err = new Error(`Error ${response.status}: ${response.statusText}`);
+            err.response = response;
+            throw err;
+        }
+    },
+    err => {
+        const errmess = new Error(err.message);
+        throw errmess;
+    })
+    //.then(response.json)
+    .then(response => dispatch(addFeedback(response.json)))
+    .catch(err => {
+        console.log(`Post Feedback: ${err.message}`);
+        alert(`Your Feedback could not be posted, Error: ${err.message}`)
+    })
+}
+
 //action creator that returns a function: a thunk...D63: Modified for CLient Server Communication
 export const fetchDishes = () => (dispatch) => {
     dispatch(dishesLoading(true));
@@ -162,7 +217,7 @@ export const fetchPromos = () => (dispatch) => {
         .catch(error => dispatch(promosFailed(error.message)));
 }
 
-//taction object with type but no payload
+//action object with type but no payload
 export const promosLoading = () => ({
     type: ActionTypes.PROMOS_LOADING
 });
@@ -178,3 +233,43 @@ export const addPromos = (promos) => ({
     type: ActionTypes.ADD_PROMOS,
     payload: promos
 });
+
+/*ASSIGNMENT 4: TASK 1 -- LEADERS' INFO FROM SERVER*/
+export const leadersLoading = () => ({
+    type: ActionTypes.LEADERS_LOADING
+});
+
+export const leadersFailed = (errmess) => ({
+    type: ActionTypes.LEADERS_FAILED,
+    payload: errmess
+});
+
+export const addLeaders = (leader) => ({
+    type: ActionTypes.ADD_LEADERS,
+    payload: leader
+});
+
+/*Remeber, fetchLeaders is returning a functon of a function,
+ so that it can e used as a variable elsewhere*/
+export const fetchLeaders = () => (dispatch) => {
+    dispatch(leadersLoading(true));
+
+    return fetch(baseUrl + "leaders")
+        .then(res => {
+            if(res.ok){
+                return res;
+            }
+            else{
+                let err = new Error(`Error ${res.status}: ${res.statusText}`);
+                err.res = res;
+                throw err;
+            }
+        },
+        err => {
+            const errmess = new Error(err.message);
+            throw errmess;
+        })
+        .then(response => response.json())
+        .then(leaders => dispatch(addLeaders(leaders)))
+        .catch(err => dispatch(leadersFailed(err.message)));
+}

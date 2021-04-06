@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 
 import { Link } from "react-router-dom";
-import { Control, Form, Errors, actions } from "react-redux-form";
+import { Control, Form, Errors } from "react-redux-form";
 
 const required = (val) => val && val.length;    //checks whether the value is greater than 0
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -22,12 +22,12 @@ class Contact extends React.Component {
         super(props);
         //if a field's 'touched' attribute is false 
         //then we wont need to validate it
-        
     }
         
     handleSubmit(values){
         console.log(`Current State is: ${JSON.stringify(values)}`);
         alert(`Current State is: ${JSON.stringify(values)}`);
+        this.props.postFeeddack();
         this.props.resetFeedbackForm();
     }
     

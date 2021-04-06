@@ -2,23 +2,28 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
+/*TASK 3*/
+import { FadeTransform, Fade, Stagger } from "react-animation-components";
+
 const RenderLeader = (props) => {
     const leaders = props.leaders.map((leader) => {
         return(
-            <Media>
-                <Media left src={leader.image} className="p-4" />
-                <Media right body list className="p-3">
-                    <Media heading>
-                        {leader.name}
-                    </Media>
-                    <Media className="mt-3 mb-3">
-                        {leader.designation}
-                    </Media>
-                    <Media>
-                        {leader.description}
+            <Stagger in>
+                <Media>
+                    <Media left src={leader.image} className="p-4" />
+                    <Media right body list className="p-3">
+                        <Media heading>
+                            {leader.name}
+                        </Media>
+                        <Media className="mt-3 mb-3">
+                            {leader.designation}
+                        </Media>
+                        <Media>
+                            {leader.description}
+                        </Media>
                     </Media>
                 </Media>
-            </Media>
+            </Stagger>
         );
     });
     return(

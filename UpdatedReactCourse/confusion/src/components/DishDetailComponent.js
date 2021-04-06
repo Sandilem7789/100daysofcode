@@ -30,7 +30,8 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
 function RenderDish({dish}) {
     if (dish != null)
         return (
-            <FadeTransform in 
+            <FadeTransform 
+                in 
                 transformProps={{
                     exitTransform: "scale(0.5) translateY(-50%)"
                 }}

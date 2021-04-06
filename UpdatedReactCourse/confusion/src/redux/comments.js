@@ -16,7 +16,7 @@ export const Comments = (state = {
             let comment = action.payload;
             return {...state, comments: state.comments.concat(comment)};
         
-            default: 
+        default: 
             return state;
     }
 }
