@@ -11,6 +11,12 @@
       "day": "Monday 7h00",
       "reminder": true,
       "id": 2
+    },
+    {
+      "text": "Try Again",
+      "day": "Wednesday 13h00",
+      "reminder": true,
+      "id": 3
     }
   ]
 }
