@@ -22,23 +22,26 @@ const App = () => {
 		getTasks();
 	}, []);
 
+	const url = "http://localhost:3000/tasks"
+
 	/*****Fetch Tasks From the backend: db.json*****/
 	const fetchTasks = async () => {
-		const res = await fetch("http://localhost:5000/tasks");
+		const res = await fetch(url);
 		const data = await res.json();
+		console.log(data);
 		return data;
 	}
 
 		/*****Fetch Tasks From the backend: db.json*****/
 		const fetchTask = async (id) => {
-		const res = await fetch(`http://localhost:5000/tasks/${id}`);
+		const res = await fetch(`${url}/${id}`);
 		const data = await res.json();
 		return data;
 	}
 
 	/******Add Task******/
 	const addTask = async (task) => {
-		const res = await fetch("http://localhost:5000/tasks", {
+		const res = await fetch(url, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -58,7 +61,7 @@ const App = () => {
   	/****DELETE TASK FUNCTION****/
   	const deleteTask = async (id) => {
 		/**Deleting on the back-end(db.json)**/
-		await fetch(`http://localhost:5000/tasks/${id}`, {method: "DELETE"});
+		await fetch(`${url}/${id}`, {method: "DELETE"});
 
 		setTasks(tasks.filter((task) => task.id !== id));
   	}
@@ -77,7 +80,7 @@ const App = () => {
 			reminder: !taskToToggle.reminder
 		}
 
-		const res = await fetch (`http://localhost:5000/tasks/${id}`,{
+		const res = await fetch (`${url}/${id}`,{
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json"

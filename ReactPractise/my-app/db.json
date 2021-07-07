@@ -1,22 +1,16 @@
 {
   "tasks": [
     {
-      "text": "Learn React",
-      "day": "Sunday 7h00",
+      "text": "Learn React By the Beach",
+      "day": "Teu 06July 2021",
       "reminder": true,
-      "id": 1
+      "id": 4
     },
     {
-      "text": "More React",
-      "day": "Monday 7h00",
+      "text": "Silveton Road",
+      "day": "Teu 12:30",
       "reminder": true,
-      "id": 2
-    },
-    {
-      "text": "Try Again",
-      "day": "Wednesday 13h00",
-      "reminder": true,
-      "id": 3
+      "id": 5
     }
   ]
 }
