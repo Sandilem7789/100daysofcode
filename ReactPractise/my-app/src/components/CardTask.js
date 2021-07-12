@@ -25,10 +25,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   media: {
-    height: 0,
     paddingTop: "56.25%", // 16:9
-    background: "grey",
-    color: "white",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -51,6 +48,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
   const style = {
     color: "black",
     cursor: "pointer",
+		width: "20px"
   };
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
