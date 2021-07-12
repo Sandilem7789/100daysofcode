@@ -30,15 +30,17 @@ const useStyles = makeStyles((theme) => ({
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
+    color: "white",
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
   },
   expandOpen: {
     transform: 'rotate(180deg)',
+    color: "black"
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: "black"
   },
 }));
 
@@ -55,7 +57,7 @@ const CardTask = ({task, onDelete, onToggle}) => {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            R
+            {task.id}
           </Avatar>
         }
         action={
