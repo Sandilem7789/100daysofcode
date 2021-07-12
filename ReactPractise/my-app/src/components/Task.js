@@ -2,7 +2,7 @@ import { FaTimes } from "react-icons/fa";
 
 const Task = ({ task, onDelete, onToggle }) => {
 	const style = {
-		color: "red",
+		color: "black",
 		cursor: "pointer",
 	}
 	

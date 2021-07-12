@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import AddButton from "./AddButton";
 
 const About = () => {
     return (
@@ -8,8 +8,8 @@ const About = () => {
             <p>This is a web app I learned to create <br/>
              from Travesty media 
              <br />Now I am Just making it mine</p>
-            <Link to="/">
-                <Button color="blue" text="Go Back" />
+            <Link className="linkText" to="/">
+                <AddButton color="blue" text="Go Back" />
             </Link>
         </div>
     )

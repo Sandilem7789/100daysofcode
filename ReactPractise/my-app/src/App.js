@@ -7,6 +7,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Appbar from "./components/Appbar";
 
+import CardTask from "./components/CardTask";
+
+import Button from '@material-ui/core/Button';
+
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
@@ -123,6 +127,7 @@ const App = () => {
             </>
           )}
         />
+				
         <Route path='/about' component={About} />
         <Footer />
       </div>
