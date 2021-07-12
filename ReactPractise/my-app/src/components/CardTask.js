@@ -1,20 +1,20 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import { red } from "@material-ui/core/colors";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import { FaTimes } from "react-icons/fa";
 
@@ -23,37 +23,35 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 345,
     background: "darkgrey",
     color: "white",
-    marginBottom: "2vh"
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: "56.25%", // 16:9
     background: "grey",
     color: "white",
   },
   expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
     color: "white",
-    transition: theme.transitions.create('transform', {
+    transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
-    color: "black"
+    transform: "rotate(180deg)",
+    color: "black",
   },
   avatar: {
-    backgroundColor: "black"
+    backgroundColor: "black",
   },
 }));
 
-const CardTask = ({task, onDelete, onToggle}) => {
+const CardTask = ({ task, onDelete, onToggle }) => {
   const style = {
-		color: "black",
-		cursor: "pointer",
-    size: "sm"
-	}
+    color: "black",
+    cursor: "pointer",
+  };
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -61,18 +59,20 @@ const CardTask = ({task, onDelete, onToggle}) => {
     setExpanded(!expanded);
   };
 
+  const imageUrl = `/images/${task.text}.jpg`;
+
   return (
     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
+          <Avatar aria-label='recipe' className={classes.avatar}>
             {task.id}
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label='settings'>
             {/*<MoreVertIcon />*/}
-            <FaTimes style={style} onClick={() => onDelete(task.id)}/>
+            <FaTimes style={style} onClick={() => onDelete(task.id)} />
           </IconButton>
         }
         title={task.text}
@@ -80,20 +80,21 @@ const CardTask = ({task, onDelete, onToggle}) => {
       />
       <CardMedia
         className={classes.media}
-        image="/images/bed.jpg"
-        title="Paella dish"
-        
+        image={imageUrl}
+        height='0'
+        width='20%'
+        title={task.text}
       />
       <CardContent>
-        <Typography variant="body2" color="white" component="p">
-            {task.text}
+        <Typography variant='body2' color='white' component='p'>
+          {task.text}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label='add to favorites'>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton aria-label='share'>
           <ShareIcon />
         </IconButton>
         <IconButton
@@ -102,27 +103,27 @@ const CardTask = ({task, onDelete, onToggle}) => {
           })}
           onClick={handleExpandClick}
           aria-expanded={expanded}
-          aria-label="show more"
+          aria-label='show more'
         >
           <ExpandMoreIcon />
         </IconButton>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
+            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
+            set aside for 10 minutes.
           </Typography>
 
           <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
+            Set aside off of the heat to let rest for 10 minutes, and then
+            serve.
           </Typography>
         </CardContent>
       </Collapse>
     </Card>
   );
-}
-
+};
 
 export default CardTask;

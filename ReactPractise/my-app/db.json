@@ -1,10 +1,40 @@
 {
   "tasks": [
     {
-      "text": "Item 1",
-      "day": "Monday 12 July 2021",
+      "text": "bed",
+      "day": "",
       "reminder": false,
       "id": 1
+    },
+    {
+      "text": "drone2",
+      "day": "Monday 12 may",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "couch",
+      "day": "Sunday 11 July",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "drone",
+      "day": "Saturday 09 July",
+      "reminder": false,
+      "id": 6
+    },
+    {
+      "text": "couch",
+      "day": "",
+      "reminder": false,
+      "id": 7
+    },
+    {
+      "text": "bed",
+      "day": "",
+      "reminder": false,
+      "id": 8
     }
   ]
 }

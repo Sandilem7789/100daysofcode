@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Appbar from "./components/Appbar";
 
+import Grid from "@material-ui/core/Grid";
+
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
@@ -98,7 +100,7 @@ const App = () => {
   return (
     <Router>
 			<Appbar/>
-      <div className='container'>
+      <Grid container spacing={2} style={{padding: "3vh"}}>
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
@@ -126,7 +128,7 @@ const App = () => {
 				
         <Route path='/about' component={About} />
         <Footer />
-      </div>
+      </Grid>
     </Router>
   );
 };
