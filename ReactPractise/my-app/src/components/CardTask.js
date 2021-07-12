@@ -16,15 +16,19 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+import { FaTimes } from "react-icons/fa";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    background: "brown",
-    color: "white"
+    background: "darkgrey",
+    color: "white",
+    marginBottom: "2vh"
   },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+    background: "grey",
     color: "white",
   },
   expand: {
@@ -45,6 +49,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CardTask = ({task, onDelete, onToggle}) => {
+  const style = {
+		color: "black",
+		cursor: "pointer",
+    size: "sm"
+	}
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -62,7 +71,8 @@ const CardTask = ({task, onDelete, onToggle}) => {
         }
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon />
+            {/*<MoreVertIcon />*/}
+            <FaTimes style={style} onClick={() => onDelete(task.id)}/>
           </IconButton>
         }
         title={task.text}
@@ -70,8 +80,9 @@ const CardTask = ({task, onDelete, onToggle}) => {
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
+        image="/images/bed.jpg"
         title="Paella dish"
+        
       />
       <CardContent>
         <Typography variant="body2" color="white" component="p">

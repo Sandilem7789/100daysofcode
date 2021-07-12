@@ -7,10 +7,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Appbar from "./components/Appbar";
 
-import CardTask from "./components/CardTask";
-
-import Button from '@material-ui/core/Button';
-
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
@@ -24,7 +20,7 @@ const App = () => {
     getTasks();
   }, []);
 
-  const url = "http://localhost:3000/tasks";
+  const url = "http://localhost:5000/tasks";
 
   /*****Fetch Tasks From the backend: db.json*****/
   const fetchTasks = async () => {

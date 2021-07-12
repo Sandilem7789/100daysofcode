@@ -1,9 +1,9 @@
 {
   "tasks": [
     {
-      "text": "React",
-      "day": "Monday 12 July",
-      "reminder": true,
+      "text": "Item 1",
+      "day": "Monday 12 July 2021",
+      "reminder": false,
       "id": 1
     }
   ]
