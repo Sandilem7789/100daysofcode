@@ -47,6 +47,12 @@
       "day": "Monday 19 July",
       "reminder": true,
       "id": 8
+    },
+    {
+      "text": "keyboard",
+      "day": "Teusday 20 July",
+      "reminder": true,
+      "id": 9
     }
   ]
 }
