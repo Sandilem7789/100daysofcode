@@ -99,7 +99,7 @@ const App = () => {
 
   return (
     <Router>
-			<Appbar/>
+			<Appbar className="appBar"/>
       <Grid container spacing={2} style={{padding: "3vh"}}>
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}

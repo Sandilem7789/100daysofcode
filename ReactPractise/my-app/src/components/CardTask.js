@@ -24,15 +24,9 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    background: "darkgrey",
+    background: "white",
     color: "secondary",
   },
-	cardHeader: {
-		display: "flex",
-		padding: 0,
-		textAlign: "center",
-		fontSize: "1vh"
-	},
   media: {
     paddingTop: "106.25%", // 16:9 that was "56.25%"
   },
@@ -68,16 +62,6 @@ const CardTask = ({ task, onDelete, onToggle }) => {
 
   return (
     <Card className={classes.root}>
-      <CardHeader
-				className={classes.cardHeader}
-        action={
-          <IconButton aria-label='settings'>
-            {/*<MoreVertIcon />*/}
-            {/*<FaTimes style={style} onClick={() => onDelete(task.id)} />*/}
-          </IconButton>
-        }
-        title={task.text}
-      />
       <CardMedia
         className={classes.media}
         image={imageUrl}
@@ -86,7 +70,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         title={task.text}
       />
       <CardContent>
-        <Typography variant='body2' color='white' component='p'>
+        <Typography variant='h5' color='white' component='p'>
           {task.text}
         </Typography>
       </CardContent>

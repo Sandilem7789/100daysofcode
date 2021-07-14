@@ -10,6 +10,11 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+Appbar{
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   max-width: 500px;
   margin: 30px auto;
@@ -42,7 +47,7 @@ body {
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
-  font-family: inherit;
+  font-family: 'Poppins', sans-serif;
   transition-duration: 50ms;
 }
 
