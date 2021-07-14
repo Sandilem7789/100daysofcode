@@ -1,6 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
+import Button from "@material-ui/core/Button"
+import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -10,22 +12,29 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { red } from "@material-ui/core/colors";
+//import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
+import DeleteSharp from "@material-ui/icons/DeleteSharp";
+//import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+//import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-import { FaTimes } from "react-icons/fa";
+//import { FaTimes } from "react-icons/fa";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
     background: "darkgrey",
-    color: "white",
+    color: "secondary",
   },
+	cardHeader: {
+		display: "flex",
+		padding: 0,
+		textAlign: "center",
+		fontSize: "1vh"
+	},
   media: {
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "106.25%", // 16:9 that was "56.25%"
   },
   expand: {
     transform: "rotate(0deg)",
@@ -41,15 +50,13 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     backgroundColor: "black",
+		fontSize: "16px",
+		width: "2.5vh",
+		height: "2.5vh"
   },
 }));
 
 const CardTask = ({ task, onDelete, onToggle }) => {
-  const style = {
-    color: "black",
-    cursor: "pointer",
-		width: "20px"
-  };
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -62,19 +69,14 @@ const CardTask = ({ task, onDelete, onToggle }) => {
   return (
     <Card className={classes.root}>
       <CardHeader
-        avatar={
-          <Avatar aria-label='recipe' className={classes.avatar}>
-            {task.id}
-          </Avatar>
-        }
+				className={classes.cardHeader}
         action={
           <IconButton aria-label='settings'>
             {/*<MoreVertIcon />*/}
-            <FaTimes style={style} onClick={() => onDelete(task.id)} />
+            {/*<FaTimes style={style} onClick={() => onDelete(task.id)} />*/}
           </IconButton>
         }
         title={task.text}
-        subheader={task.day}
       />
       <CardMedia
         className={classes.media}
@@ -92,8 +94,9 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         <IconButton aria-label='add to favorites'>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label='share'>
-          <ShareIcon />
+        
+        <IconButton onClick={() => onDelete(task.id)}>
+          <DeleteSharp />
         </IconButton>
         <IconButton
           className={clsx(classes.expand, {
@@ -109,15 +112,11 @@ const CardTask = ({ task, onDelete, onToggle }) => {
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
-          </Typography>
-
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then
-            serve.
-          </Typography>
+					<Grid item xs={12}>
+						<Button type="button" variant="primary" size="small" style={{margin:"5px"}}>Delete</Button>
+						<Button type="button" variant="contained" color="primary" style={{margin:"5px"}}>Delete</Button>
+					</Grid>
+						
         </CardContent>
       </Collapse>
     </Card>
