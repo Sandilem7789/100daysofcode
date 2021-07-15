@@ -100,7 +100,7 @@ const App = () => {
   return (
     <Router>
 			<Appbar className="appBar"/>
-      <Grid container spacing={2} style={{padding: "3vh"}}>
+      <Grid container spacing={2} className="containerGrid">
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}

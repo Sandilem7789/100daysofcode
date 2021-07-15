@@ -10,9 +10,13 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-Appbar{
-  margin: 0;
+.appBar {
   padding: 0;
+  margin: 0;
+}
+
+.containerGrid {
+  padding: 0vh 2vh;
 }
 
 .container {

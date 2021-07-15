@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
 		background: `white`,
     paddingTop: "5px",
+    margin: "0",
     color: 'black',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
