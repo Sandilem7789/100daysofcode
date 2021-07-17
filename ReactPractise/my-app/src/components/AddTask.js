@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import FormInput from './FormInput';
 
 const AddTask = ({ onAdd }) => {
 	const [text, setText] = useState('')
@@ -23,6 +24,7 @@ const AddTask = ({ onAdd }) => {
 
 	return (
 		<form className='add-form' onSubmit={onSubmit}>
+			<FormInput />
 			<div className='form-control'>
 				<label>Task</label>
 				<input 

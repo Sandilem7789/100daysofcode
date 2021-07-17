@@ -111,14 +111,16 @@ const App = () => {
           render={(props) => (
             <>
               {/*TERNARY WITH NO ELSE STATEMENT*/}
-              {showAddTask && <AddTask onAdd={addTask} />}
-
+              {showAddTask && <Grid container><AddTask onAdd={addTask} /></Grid> }
               {tasks.length > 0 ? (
-                <Tasks
-                  tasks={tasks}
-                  onDelete={deleteTask}
-                  onToggle={toggleReminder}
-                />
+                <Grid container xs={12}>
+                  <Tasks
+                    tasks={tasks}
+                    onDelete={deleteTask}
+                    onToggle={toggleReminder}
+                  />
+                </Grid>
+                
               ) : (
                 <h3 style={style}>No Tasks To Show</h3>
               )}
