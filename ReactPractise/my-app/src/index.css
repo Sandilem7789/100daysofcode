@@ -97,12 +97,18 @@ body {
   display: block;
 }
 
+/*Inputs of the form*/
 .form-control input {
   width: 100%;
-  height: 40px;
+  height: 4vh;
   margin: 5px;
   padding: 3px 7px;
-  font-size: 17px;
+  font-size: 1.8vh;
+}
+
+/*Labels of the form*/
+.form-control h3 {
+  padding-top: 1.5vh;
 }
 
 .form-control-check {

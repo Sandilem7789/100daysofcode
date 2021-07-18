@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import FormInput from './FormInput';
+import AddProduct from './AddProductForm/AddProduct';
+import { Grid } from '@material-ui/core';
 
 const AddTask = ({ onAdd }) => {
 	const [text, setText] = useState('')
@@ -23,43 +24,46 @@ const AddTask = ({ onAdd }) => {
 
 
 	return (
-		<form className='add-form' onSubmit={onSubmit}>
-			<FormInput />
-			<div className='form-control'>
-				<label>Task</label>
-				<input 
-					type='text' 
-					placeholder='Add Task' 
-					value={text} 
-					onChange={(e) => setText(e.target.value)} 
-				/>
-			</div>
-			<div className='form-control'>
-				<label>Day & Time</label>
-				<input 
-					type='text' 
-					placeholder='Add Day & Time' 
-					value={day} 
-					onChange={(e) => setDay(e.target.value)} 
-				/>
-			</div>
-			<div className='form-control form-control-check'>
-				<label>Set Reminder</label>
-				<input 
-					type='checkbox' 
-					checked={reminder} 
-					value='{reminder}' 
-					onChange={(e) => setReminder(e.currentTarget.checked)}
-				/>
-			</div>
+		<Grid container spacing={3}>
+			{/*<Grid item xs={12} sm={4}>
+				<form className='add-form' onSubmit={onSubmit}>
+					
+					<div className='form-control'>
+					<label>Task</label>
+					<input
+						type='text'
+						placeholder='Add Task'
+						value={text}
+						onChange={(e) => setText(e.target.value)}
+					/>
+					</div>
+					<div className='form-control'>
+					<label>Day & Time</label>
+					<input
+						type='text'
+						placeholder='Add Day & Time'
+						value={day}
+						onChange={(e) => setDay(e.target.value)}
+					/>
+					</div>
+					<div className='form-control form-control-check'>
+					<label>Set Reminder</label>
+					<input
+						type='checkbox'
+						checked={reminder}
+						value='{reminder}'
+						onChange={(e) => setReminder(e.currentTarget.checked)}
+					/>
+					</div>
 
-			<input 
-				type='submit' 
-				value='Save Task' 
-				className='btn btn-block' 
-			/>
-		</form>
-	)
+					<input type='submit' value='Save Task' className='btn btn-block' />
+				</form>
+	</Grid>*/}
+			<Grid item xs={12} sm={4}>
+				<AddProduct />
+			</Grid>
+		</Grid>
+  	);
 }
 
 export default AddTask
