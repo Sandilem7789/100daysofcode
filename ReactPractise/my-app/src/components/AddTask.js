@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import AddProduct from './AddProductForm/AddProduct';
-import { Grid } from '@material-ui/core';
+import { Grid, Button } from '@material-ui/core';
 
 const AddTask = ({ onAdd }) => {
 	const [text, setText] = useState('')
@@ -58,7 +58,8 @@ const AddTask = ({ onAdd }) => {
 
 					<input type='submit' value='Save Task' className='btn btn-block' />
 				</form>
-	</Grid>*/}
+			</Grid>*/}
+			<Grid item xs={12} sm={4}><h1></h1></Grid>
 			<Grid item xs={12} sm={4}>
 				<AddProduct />
 			</Grid>

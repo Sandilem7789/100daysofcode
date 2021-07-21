@@ -2,6 +2,7 @@ import React from 'react'
 import { 
     InputLabel, 
     Grid,
+    Button
 } from '@material-ui/core'
 import FormInput from './FormInput'
 
@@ -43,10 +44,17 @@ const AddProduct = () => {
                         style={{
                             padding: "5px",
                             marginLeft: ".5vw",
-                            width: "14.6vw",
                             height: "110%"
                         }}
                     />
+                </Grid>
+                <Grid container spacing={4}>
+                    <Grid item xs={6}>
+                        <Button variant="contained">Put me on</Button>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Button variant="contained">Press Me</Button>
+                    </Grid>
                 </Grid>
             </Grid>
         </form>
