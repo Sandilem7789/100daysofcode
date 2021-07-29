@@ -49,11 +49,11 @@ const AddProduct = () => {
                     />
                 </Grid>
                 <Grid container spacing={4}>
-                    <Grid item xs={6}>
-                        <Button variant="contained">Put me on</Button>
+                    <Grid item xs={2}>
                     </Grid>
-                    <Grid item xs={6}>
-                        <Button variant="contained">Press Me</Button>
+                    <Grid item xs={9}>
+                        <Button variant="contained" style={{margin: "5px"}}>Add Product</Button>
+                        <Button variant="contained" style={{margin: "5px"}}>Cancel</Button>
                     </Grid>
                 </Grid>
             </Grid>
