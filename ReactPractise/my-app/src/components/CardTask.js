@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
-    color: "white",
+    color: "black",
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
@@ -95,9 +95,9 @@ const CardTask = ({ task, onDelete, onToggle }) => {
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography variant='body2' paragraph>Detailed Description</Typography>
 					<Grid item xs={12}>
-						<Button type="button" variant="primary" size="small" style={{margin:"5px"}}>Delete</Button>
+						<Button type="button" variant="primary" size="small" style={{margin:"5px", borderRadius: "50px"}}>Delete</Button>
 						<Button type="button" variant="contained" color="primary" style={{margin:"5px"}}>Delete</Button>
 					</Grid>
 						

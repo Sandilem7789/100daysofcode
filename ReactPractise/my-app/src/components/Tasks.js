@@ -17,7 +17,7 @@ const Tasks = ({ tasks, onDelete, onToggle }) => {
          ))}
          <Grid container spacing={3}>
             {tasks.map((task) => (
-            <Grid item xs={6} md={3} key={task.id}>
+            <Grid item xs={12} md={3} key={task.id}>
                <CardTask
                   key={task.id}
                   task={task}
