@@ -99,7 +99,7 @@ body {
 
 /*Inputs of the form*/
 .form-control input {
-  width: 100%;
+  width: 90%;
   height: 4vh;
   margin: 5px;
   padding: 3px 7px;
@@ -124,6 +124,12 @@ body {
 .form-control-check input {
   flex: 2;
   height: 20px;
+}
+
+.form-btn {
+  margin: 5px;
+  background-color: "black";
+  color: "white";
 }
 
 footer {

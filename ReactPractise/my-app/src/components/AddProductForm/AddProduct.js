@@ -6,6 +6,15 @@ import {
 } from '@material-ui/core'
 import FormInput from './FormInput'
 
+//styling
+const btnStyle = {
+    margin: "5px",
+    backgroundColor: "black",
+    color: "white",
+}
+
+
+//component
 const AddProduct = () => {
     return (
         <form className="form-control">
@@ -52,8 +61,8 @@ const AddProduct = () => {
                     <Grid item xs={2}>
                     </Grid>
                     <Grid item xs={9}>
-                        <Button variant="contained" style={{margin: "5px"}}>Add Product</Button>
-                        <Button variant="contained" style={{margin: "5px"}}>Cancel</Button>
+                        <Button variant="contained" style={btnStyle}>Add Product</Button>
+                        <Button variant="contained" style={btnStyle}>Cancel</Button>
                     </Grid>
                 </Grid>
             </Grid>
