@@ -6,8 +6,10 @@ import AddTask from "./components/AddTask";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Appbar from "./components/Appbar";
+import Product from "./components/newDesign/Product"; 
 
 import Grid from "@material-ui/core/Grid";
+import Products from "./components/newDesign/Products";
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -129,6 +131,7 @@ const App = () => {
         />
 				
         <Route path='/about' component={About} />
+        <Route path='/products' component={Products} />
         <Footer />
       </Grid>
     </Router>
