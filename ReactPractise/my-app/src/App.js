@@ -6,7 +6,6 @@ import AddTask from "./components/AddTask";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Appbar from "./components/Appbar";
-import Product from "./components/newDesign/Product"; 
 
 import Grid from "@material-ui/core/Grid";
 import Products from "./components/newDesign/Products";
@@ -70,7 +69,8 @@ const App = () => {
 
   /****STYLING COMPONENT*****/
   const style = {
-    textAlign: "center",
+    display: "grid",
+    placeItems: "center",
     fontWeight: "lighter",
   };
 
@@ -102,30 +102,41 @@ const App = () => {
   return (
     <Router>
 			<Appbar className="appBar"/>
-      <Grid container spacing={2} className="containerGrid">
-        
-        <Header
-          onAdd={() => setShowAddTask(!showAddTask)}
-          showAdd={showAddTask}
-        />
+        <Grid container style={style}>
+          <Grid item>
+            <Header
+              onAdd={() => setShowAddTask(!showAddTask)}
+              showAdd={showAddTask}
+              style={style}
+            />
+          </Grid>
+        </Grid>
         <Route
           path='/'
           exact
           render={(props) => (
             <>
               {/*TERNARY WITH NO ELSE STATEMENT*/}
-              {showAddTask && <Grid item><AddTask onAdd={addTask} /></Grid> }
+              {showAddTask && 
+                <Grid item>
+                  <AddTask onAdd={addTask} />
+                </Grid>
+              }
               {tasks.length > 0 ? (
-                <Grid item xs={12}>
-                  <Tasks
-                    tasks={tasks}
-                    onDelete={deleteTask}
-                    onToggle={toggleReminder}
-                  />
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <Tasks
+                      tasks={tasks}
+                      onDelete={deleteTask}
+                      onToggle={toggleReminder}
+                    />
+                  </Grid>
                 </Grid>
                 
               ) : (
-                <h3 style={style}>No Tasks To Show</h3>
+                <Grid container style={style}>
+                  <h3 >No Tasks To Show</h3>
+                </Grid>
               )}
             </>
           )}
@@ -133,8 +144,10 @@ const App = () => {
 				
         <Route path='/about' component={About} />
         <Route path='/products' component={Products} />
-        <Footer />
-      </Grid>
+      
+        <Grid style={style}>
+          <Footer />
+        </Grid>
     </Router>
   );
 };

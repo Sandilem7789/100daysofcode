@@ -4,25 +4,13 @@
       "text": "bag",
       "day": "",
       "reminder": false,
+      "id": 1
+    },
+    {
+      "text": "bag",
+      "day": "",
+      "reminder": false,
       "id": 2
-    },
-    {
-      "text": "drone",
-      "day": "",
-      "reminder": false,
-      "id": 4
-    },
-    {
-      "text": "contentgear",
-      "day": "",
-      "reminder": false,
-      "id": 5
-    },
-    {
-      "text": "bed",
-      "day": "",
-      "reminder": false,
-      "id": 6
     }
   ]
 }
