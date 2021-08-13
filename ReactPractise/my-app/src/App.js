@@ -103,6 +103,7 @@ const App = () => {
     <Router>
 			<Appbar className="appBar"/>
       <Grid container spacing={2} className="containerGrid">
+        
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
@@ -113,9 +114,9 @@ const App = () => {
           render={(props) => (
             <>
               {/*TERNARY WITH NO ELSE STATEMENT*/}
-              {showAddTask && <Grid container><AddTask onAdd={addTask} /></Grid> }
+              {showAddTask && <Grid item><AddTask onAdd={addTask} /></Grid> }
               {tasks.length > 0 ? (
-                <Grid container xs={12}>
+                <Grid item xs={12}>
                   <Tasks
                     tasks={tasks}
                     onDelete={deleteTask}

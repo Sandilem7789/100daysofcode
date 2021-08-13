@@ -6,11 +6,11 @@ import {
 } from '@material-ui/core'
 
 
-const FormInput = ({name, placeholder}) => {
+const FormInput = ({label, placeholder, value, onChange}) => {
     return (
         <Grid container spacing={2}>
             <Grid item xs={6} sm={6}>
-                <InputLabel><h3>{name}</h3></InputLabel>
+                <InputLabel><h3>{label}</h3></InputLabel>
             </Grid>
             <Grid item xs={6} sm={6}>
                 <input

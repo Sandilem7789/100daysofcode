@@ -8,6 +8,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  overflow: auto;
 }
 
 .appBar {
@@ -34,10 +35,8 @@ body {
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  display: grid;
+  place-items: center;
 }
 
 .btn {
@@ -57,10 +56,6 @@ body {
 
 .btn:focus {
   outline: none;
-}
-
-.btn:active {
-  transform: scale(0.99);
 }
 
 .btn-block {

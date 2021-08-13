@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
 		background: `white`,
-    paddingTop: "5px",
+    paddingTop: "10px",
+    paddingBottom: "0px",
     margin: "0",
     color: 'black',
     transition: theme.transitions.create(['margin', 'width'], {
@@ -118,7 +119,7 @@ export default function Appbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h5" noWrap>
-            Task Tracker
+            Thenga.com
           </Typography>
         </Toolbar>
       </AppBar>
@@ -136,7 +137,7 @@ export default function Appbar() {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
-        <Divider />
+        <Divider/>
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
@@ -149,7 +150,7 @@ export default function Appbar() {
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon>{index % 3 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}

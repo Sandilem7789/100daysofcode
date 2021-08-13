@@ -17,6 +17,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import DeleteSharp from "@material-ui/icons/DeleteSharp";
 //import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import UpdateSharp from "@material-ui/icons/UpdateSharp";
+import { Divider } from "@material-ui/core";
 //import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 //import { FaTimes } from "react-icons/fa";
@@ -53,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
 const CardTask = ({ task, onDelete, onToggle }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -69,38 +70,77 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         width='20%'
         title={task.text}
       />
-      <CardContent>
-        <Typography variant='h5' color='white' component='p'>
-          {task.text}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label='add to favorites'>
-          <FavoriteIcon />
-        </IconButton>
-        
-        <IconButton onClick={() => onDelete(task.id)}>
-          <DeleteSharp />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label='show more'
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
+      <Grid container spacing={2}>
+        <CardContent 
+          style={{ 
+            display: "flex",
+            padding: "0px 10px",
+            alignContent: "center" 
+          }}>
+          <CardActions 
+            disableSpacing 
+            style={{ 
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              padding: "4px" 
+            }}>
+            <Typography variant='h5' color='white' component='p'>
+              {task.text}
+            </Typography>
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label='show more'
+              item
+              xs={6}
+            >
+              <ExpandMoreIcon />
+            </IconButton>
+          </CardActions>
+        </CardContent>
+      </Grid>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
+        
         <CardContent>
-          <Typography variant='body2' paragraph>Detailed Description</Typography>
-					<Grid item xs={12}>
-						<Button type="button" variant="primary" size="small" style={{margin:"5px", borderRadius: "50px"}}>Delete</Button>
-						<Button type="button" variant="contained" color="primary" style={{margin:"5px"}}>Delete</Button>
-					</Grid>
-						
+          <Typography variant='body1' color='white' component='p'>
+            Detailed Description and other things
+          </Typography>
+          <br />
+          <Typography variant='body2' color='white' component='p'>
+            Quantity: 20
+          </Typography>
+          <br />
+          <Divider />
+          <br />
+          <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Button
+              type='button'
+              variant='contained'
+              color="primary"
+              style={{ margin: "0px"}}
+            >
+              Update
+              <UpdateSharp/>
+            </Button>
+          </Grid>
+          <Grid item xs={6}>
+            <Button
+              type='button'
+              variant='contained'
+              color='secondary'
+              style={{ margin: "0px" }}
+              onClick={() => onDelete(task.id)}
+              >
+              Delete
+              <DeleteSharp />
+            </Button>
+          </Grid>
+          </Grid>
         </CardContent>
       </Collapse>
     </Card>
