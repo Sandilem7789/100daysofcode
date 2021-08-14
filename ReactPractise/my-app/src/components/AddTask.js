@@ -14,7 +14,7 @@ const AddTask = ({ onAdd }) => {
 		e.preventDefault();
 
 		if(!text){
-			alert("Please add a task");
+			alert("Please add an Item");
 			return
 		}
 		
@@ -31,59 +31,64 @@ const AddTask = ({ onAdd }) => {
 	}
 
 	return (
-		<Grid container spacing={3}
-		style={style}
-		>
+		<Grid container spacing={3} style={style}>
 			<form className='add-form' onSubmit={onSubmit}>
 				<div className='form-control'>
 					<Grid container spacing={2}>
-						<Grid item xs={4}>
+						<Grid item xs={6} sm={6}>
 							<InputLabel><h3 style={{color: "black"}}>Item Name</h3></InputLabel>
 						</Grid>
-						<Grid item xs={7} sm={8}>
+						<Grid item xs={6} sm={6}>
 							<input
 								type='text'
-								placeholder='Enter Product Name'
+								placeholder='Enter Item Name'
 								value={text}
 								onChange={(e) => setText(e.target.value)}
 							/>
 						</Grid>
 					</Grid>
 				</div>
-			<div className='form-control'>
-				<Grid container>
-					<Grid item xs={4}>
-						<InputLabel><h3 style={{color: "black"}}>Description of Item</h3></InputLabel>
+				<div className='form-control'>
+					<Grid container spacing={2}>
+						<Grid item xs={6} sm={6}>
+							<InputLabel><h3 style={{color: "black"}}>Item Description</h3></InputLabel>
+						</Grid>
+						<Grid item xs={6} sm={6}>
+							<input
+								type='text'
+								placeholder='Enter Item Description'
+								value={day}
+								onChange={(e) => setDay(e.target.value)}
+							/>
+						</Grid>
 					</Grid>
-					<Grid item xs={7} sm={8}>
-						<input
-							type='text'
-							placeholder='Enter Description'
-							value={day}
-							onChange={(e) => setDay(e.target.value)}
-						/>
+				</div>
+				<div className='form-control form-control-check'>
+					<Grid container spacing={2}>
+						<Grid item xs={6} sm={6}>
+						<InputLabel><h3 style={{color: "black"}}>Set Reminder</h3></InputLabel>
+						</Grid>
+						<Grid item sx={6}>
+							<input
+								type='checkbox'
+								checked={reminder}
+								value='{reminder}'
+								onChange={(e) => setReminder(e.currentTarget.checked)}
+								style={{margin: "0px 10px 5px"}}
+							/>
+						</Grid>
 					</Grid>
-				</Grid>
-			</div>
-			<div className='form-control form-control-check'>
-				<label>Set Reminder</label>
-				<input
-					type='checkbox'
-					checked={reminder}
-					value='{reminder}'
-					onChange={(e) => setReminder(e.currentTarget.checked)}
-				/>
-			</div>
-			<div style={style}>
-				<Button 
-					type='submit' value='Save Task' 
-					variant="outlined" color="primary"
-				>
-					Save Item
-				</Button>
-			</div>
+				</div>
+				<div style={style}>
+					<Button 
+						type='submit' value='Save Task' 
+						variant="outlined" color="primary"
+					>
+						Save Item
+					</Button>
+				</div>
 			</form>
-			{/*<AddProduct />*/}
+				{/*<AddProduct />*/}
 		</Grid>
   	);
 }
