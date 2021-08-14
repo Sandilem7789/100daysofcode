@@ -124,7 +124,7 @@ const App = () => {
               }
               {tasks.length > 0 ? (
                 <Grid container spacing={2}>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} style={style}>
                     <Tasks
                       tasks={tasks}
                       onDelete={deleteTask}
@@ -135,7 +135,7 @@ const App = () => {
                 
               ) : (
                 <Grid container style={style}>
-                  <h3 >No Tasks To Show</h3>
+                  <h3 style={{margin: "15px"}} >No Tasks To Show</h3>
                 </Grid>
               )}
             </>
@@ -144,7 +144,6 @@ const App = () => {
 				
         <Route path='/about' component={About} />
         <Route path='/products' component={Products} />
-      
         <Grid style={style}>
           <Footer />
         </Grid>

@@ -25,32 +25,45 @@ const AddTask = ({ onAdd }) => {
 		setReminder(false);
 	}
 
+	const style={
+		display: "grid",
+		placeItems: "center"
+	}
 
 	return (
 		<Grid container spacing={3}
-		style={{
-			display: "grid",
-			placeItems: "center"
-		}}
+		style={style}
 		>
 			<form className='add-form' onSubmit={onSubmit}>
 				<div className='form-control'>
-				<InputLabel><h3>Item Name</h3></InputLabel>
-				<input
-					type='text'
-					placeholder='Enter Product Name'
-					value={text}
-					onChange={(e) => setText(e.target.value)}
-				/>
+					<Grid container spacing={2}>
+						<Grid item xs={4}>
+							<InputLabel><h3 style={{color: "black"}}>Item Name</h3></InputLabel>
+						</Grid>
+						<Grid item xs={7} sm={8}>
+							<input
+								type='text'
+								placeholder='Enter Product Name'
+								value={text}
+								onChange={(e) => setText(e.target.value)}
+							/>
+						</Grid>
+					</Grid>
 				</div>
 			<div className='form-control'>
-				<InputLabel><h3>Day & Time</h3></InputLabel>
-				<input
-					type='text'
-					placeholder='Add Day & Time'
-					value={day}
-					onChange={(e) => setDay(e.target.value)}
-				/>
+				<Grid container>
+					<Grid item xs={4}>
+						<InputLabel><h3 style={{color: "black"}}>Description of Item</h3></InputLabel>
+					</Grid>
+					<Grid item xs={7} sm={8}>
+						<input
+							type='text'
+							placeholder='Enter Description'
+							value={day}
+							onChange={(e) => setDay(e.target.value)}
+						/>
+					</Grid>
+				</Grid>
 			</div>
 			<div className='form-control form-control-check'>
 				<label>Set Reminder</label>
@@ -61,13 +74,17 @@ const AddTask = ({ onAdd }) => {
 					onChange={(e) => setReminder(e.currentTarget.checked)}
 				/>
 			</div>
-			<Button>
-			<input type='submit' value='Save Task' className='btn btn-block' />
-
-			</Button>
+			<div style={style}>
+				<Button 
+					type='submit' value='Save Task' 
+					variant="outlined" color="primary"
+				>
+					Save Item
+				</Button>
+			</div>
 			</form>
-				{/*<AddProduct />*/}
-			</Grid>
+			{/*<AddProduct />*/}
+		</Grid>
   	);
 }
 export default AddTask

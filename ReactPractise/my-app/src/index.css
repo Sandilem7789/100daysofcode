@@ -81,7 +81,8 @@ body {
 }
 
 .add-form {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  width: auto;
 }
 
 .form-control {
@@ -93,7 +94,17 @@ body {
 }
 
 /*Inputs of the form*/
+input {
+  border-radius: 10px;
+  border: 3px solid grey;
+  left: 30px;
+  outline-style: 2px solid;
+  outline-color: blueviolet;
+  outline-offset: 1vh;
+}
+
 .form-control input {
+  position: relative;
   width: 90%;
   height: 4vh;
   margin: 5px;
