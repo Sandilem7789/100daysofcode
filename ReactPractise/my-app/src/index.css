@@ -106,8 +106,7 @@ input {
   position: relative;
   width: 90%;
   height: 4vh;
-  margin: 5px;
-  padding: 3px 7px;
+  margin: 5px 0px -5px;
   font-size: 1.8vh;
 }
 
