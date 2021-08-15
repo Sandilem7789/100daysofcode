@@ -72,6 +72,7 @@ const App = () => {
     display: "grid",
     placeItems: "center",
     fontWeight: "lighter",
+    padding: "10px"
   };
 
   /*******TOGGLE REMINDER******/
@@ -91,7 +92,7 @@ const App = () => {
     });
 
     const data = await res.json();
-
+    
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, reminder: data.reminder } : task
@@ -132,7 +133,6 @@ const App = () => {
                     />
                   </Grid>
                 </Grid>
-                
               ) : (
                 <Grid container style={style}>
                   <h3 style={{margin: "15px"}} >No Tasks To Show</h3>
@@ -141,7 +141,6 @@ const App = () => {
             </>
           )}
         />
-				
         <Route path='/about' component={About} />
         <Route path='/products' component={Products} />
         <Grid style={style}>

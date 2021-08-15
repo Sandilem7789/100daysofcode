@@ -83,6 +83,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
+              alignContent: "center",
               padding: "4px" 
             }}>
             <Typography variant='h5' color='white' component='p'>
@@ -107,7 +108,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         
         <CardContent>
           <Typography variant='body1' color='white' component='p'>
-            Detailed Description and other things
+            {task.day}
           </Typography>
           <br />
           <Typography variant='body2' color='white' component='p'>
