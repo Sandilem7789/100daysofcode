@@ -1,3 +1,11 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "text": "bag",
+      "day": "this bag is for sale",
+      "reminder": true,
+      "category": "Bags",
+      "id": 2
+    }
+  ]
 }

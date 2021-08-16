@@ -15,7 +15,7 @@ const AddButton = ({color, text, onClick}) => {
 		<Button 
 		variant="contained"
 		onClick={onClick} 
-		style={{backgroundColor: color, color: 'white'}} 
+		style={{backgroundColor: color, color: 'white', fontFamily: "Poppins, sans-serif"}} 
 		className="btn">
 			{text}
 		</Button>

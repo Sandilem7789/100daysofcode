@@ -87,7 +87,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
               padding: "4px" 
             }}>
             <Typography variant='h5' color='white' component='p'>
-              {task.text}
+              <span className="card-labels" style={{fontWeight: "bold"}}>{task.text}</span>
             </Typography>
             <IconButton
               className={clsx(classes.expand, {
@@ -108,39 +108,65 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         
         <CardContent>
           <Typography variant='body1' color='white' component='p'>
-            {task.day}
+            <span 
+              className="card-labels" 
+              style={{
+                fontWeight: "bold"
+              }}>
+                Description: {task.day}
+            </span>
           </Typography>
           <br />
+          <Grid container spacing={2}>
+              <Grid item>
+                <Typography 
+                  variant='body1' 
+                  color='white' 
+                  component='p'
+                >
+                  <span className="card-labels">
+                    Category:
+                  </span>
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography variant='body1' color='white' component='p'>
+                  <span className="card-labels">{task.category}</span>
+                </Typography>
+              </Grid>
+          </Grid>
+          
+          <br />
           <Typography variant='body2' color='white' component='p'>
-            Quantity: 20
+            <span className="card-labels">Quantity: 20</span>
           </Typography>
           <br />
           <Divider />
           <br />
           <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <Button
-              type='button'
-              variant='contained'
-              color="primary"
-              style={{ margin: "0px"}}
-            >
-              Update
-              <UpdateSharp/>
-            </Button>
-          </Grid>
-          <Grid item xs={6}>
-            <Button
-              type='button'
-              variant='contained'
-              color='secondary'
-              style={{ margin: "0px" }}
-              onClick={() => onDelete(task.id)}
+            <Grid item xs={6}>
+              <Button
+                type='button'
+                variant='contained'
+                color="primary"
+                style={{ margin: "0px"}}
               >
-              Delete
-              <DeleteSharp />
-            </Button>
-          </Grid>
+                Update
+                <UpdateSharp/>
+              </Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button
+                type='button'
+                variant='contained'
+                color='secondary'
+                style={{ margin: "0px" }}
+                onClick={() => onDelete(task.id)}
+                >
+                Delete
+                <DeleteSharp />
+              </Button>
+            </Grid>
           </Grid>
         </CardContent>
       </Collapse>

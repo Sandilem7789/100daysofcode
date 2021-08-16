@@ -68,6 +68,8 @@ body {
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .task.reminder {
@@ -78,6 +80,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.card-labels {
+  font-family: 'Poppins', sans-serif;
 }
 
 .add-form {
@@ -100,14 +106,20 @@ input {
   outline-style: 2vh solid;
   outline-color: blueviolet;
   outline-offset: .1vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 .form-control input {
   position: relative;
   width: 90%;
   height: 4vh;
-  margin: 5px 0px -5px;
+  margin: 5px 0px 0px;
   font-size: 1.8vh;
+}
+
+.form-label {
+  font-size: 2.7vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 /*Labels of the form*/

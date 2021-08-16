@@ -125,7 +125,7 @@ const App = () => {
               }
               {tasks.length > 0 ? (
                 <Grid container spacing={2}>
-                  <Grid item xs={12} style={style}>
+                  <Grid item xs={12}>
                     <Tasks
                       tasks={tasks}
                       onDelete={deleteTask}
