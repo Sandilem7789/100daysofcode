@@ -138,7 +138,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
           
           <br />
           <Typography variant='body2' color='white' component='p'>
-            <span className="card-labels">Quantity: 20</span>
+            <span className="card-labels">Quantity: {task.quantity} items in stock</span>
           </Typography>
           <br />
           <Divider />

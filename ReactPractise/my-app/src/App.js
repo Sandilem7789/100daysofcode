@@ -135,7 +135,7 @@ const App = () => {
                 </Grid>
               ) : (
                 <Grid container style={style}>
-                  <h3 style={{margin: "15px"}} >No Tasks To Show</h3>
+                  <h3 style={{margin: "15px"}} >No Items To Show</h3>
                 </Grid>
               )}
             </>

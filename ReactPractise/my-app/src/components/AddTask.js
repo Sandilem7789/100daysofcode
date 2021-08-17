@@ -13,9 +13,11 @@ const AddTask = ({ onAdd }) => {
 	//hooks
 	const [text, setText] = useState("")
 	const [day, setDay] = useState("")
-	const [reminder, setReminder] = useState(false)
+
+	//const [reminder, setReminder] = useState(false)
 
 	//my added hooks
+	const [quantity, setQuantity] = useState("")
 	const [category, setCategory] = useState("")
 
 	//triggered when we submit 
@@ -23,16 +25,17 @@ const AddTask = ({ onAdd }) => {
 		e.preventDefault();
 
 		if(!text){
-			alert("Please add an Item Name");
+			alert("Please add Item Name");
 			return
 		}
 		
-		onAdd({ text, day, reminder, category })
+		onAdd({ text, day, category, quantity })
 
 		setText("");
 		setDay("");
-		setReminder(false);
+		//setReminder(false);
 		setCategory("")
+		setQuantity("0")
 	}
 
 	const style={
@@ -102,23 +105,22 @@ const AddTask = ({ onAdd }) => {
 						</Grid>
 						<Grid item xs={6} sm={6}>
 							<Select value={category} onChange={(e) => setCategory(e.target.value)}>
-								<span className="card-labels">
-								<MenuItem key={1} value="Accessories">
-									Accessories
-								</MenuItem>
-								<MenuItem key={2} value="Bags">
-									Bags
-								</MenuItem>
-								<MenuItem key={3} value="Shoes">
-									Shoes
-								</MenuItem>
-								<MenuItem key={4} value="Other">
-									Other
-								</MenuItem>
-								<MenuItem key={5} value="Clothing">
-									Clothing
-								</MenuItem>
-								</span>
+								
+									<MenuItem key={1} value="Accessories">
+										Accessories
+									</MenuItem>
+									<MenuItem key={2} value="Bags">
+										Bags
+									</MenuItem>
+									<MenuItem key={3} value="Shoes">
+										Shoes
+									</MenuItem>
+									<MenuItem key={4} value="Other">
+										Other
+									</MenuItem>
+									<MenuItem key={5} value="Clothing">
+										Clothing
+									</MenuItem>
 							</Select>
 						</Grid>
 					</Grid>
@@ -128,24 +130,23 @@ const AddTask = ({ onAdd }) => {
 						<Grid item xs={6} sm={6}>
 						<InputLabel>
 							<Typography variant="h6" gutterBottom style={{color: "black"}}>
-								<span className="form-label">In Stock?</span>
+								<span className="form-label">Number of Items</span>
 							</Typography>
 						</InputLabel>
 						</Grid>
-						<Grid item sx={6}>
+						<Grid item sx={6} sm={6}>
 							<input
-								type='checkbox'
-								checked={reminder}
-								value='{reminder}'
-								onChange={(e) => setReminder(e.currentTarget.checked)}
-								style={{margin: "0px 10px 5px"}}
+								type='number'
+								placeholder='Number of Items'
+								value={quantity}
+								onChange={(e) => setQuantity(e.target.value)}
 							/>
 						</Grid>
 					</Grid>
 				</div>
 				<div style={style}>
 					<Button 
-						type='submit' value='Save Task' 
+						type='submit' value='Save Item' 
 						variant="outlined" color="primary"
 					>
 						Save Item
