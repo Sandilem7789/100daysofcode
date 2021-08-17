@@ -17,7 +17,7 @@ const AddTask = ({ onAdd }) => {
 	//const [reminder, setReminder] = useState(false)
 
 	//my added hooks
-	const [quantity, setQuantity] = useState("")
+	const [quantity, setQuantity] = useState("0")
 	const [category, setCategory] = useState("")
 
 	//triggered when we submit 
@@ -60,7 +60,7 @@ const AddTask = ({ onAdd }) => {
 					<Grid container spacing={2}>
 						<Grid item xs={6} sm={6}>
 							<InputLabel>
-								<Typography variant="h6" gutterBottom style={{color: "black"}}>
+								<Typography variant="h6" gutterBottom>
 									<span className="form-label">Item Name</span>
 								</Typography>
 							</InputLabel>
@@ -79,7 +79,7 @@ const AddTask = ({ onAdd }) => {
 					<Grid container spacing={2}>
 						<Grid item xs={6} sm={6}>
 							<InputLabel>
-								<Typography variant="h6" style={{color: "black"}}>
+								<Typography variant="h6">
 									<span className="form-label">Item Description</span>
 								</Typography>
 							</InputLabel>
@@ -105,22 +105,21 @@ const AddTask = ({ onAdd }) => {
 						</Grid>
 						<Grid item xs={6} sm={6}>
 							<Select value={category} onChange={(e) => setCategory(e.target.value)}>
-								
-									<MenuItem key={1} value="Accessories">
-										Accessories
-									</MenuItem>
-									<MenuItem key={2} value="Bags">
-										Bags
-									</MenuItem>
-									<MenuItem key={3} value="Shoes">
-										Shoes
-									</MenuItem>
-									<MenuItem key={4} value="Other">
-										Other
-									</MenuItem>
-									<MenuItem key={5} value="Clothing">
-										Clothing
-									</MenuItem>
+								<MenuItem key={1} value="Accessories">
+									Accessories
+								</MenuItem>
+								<MenuItem key={2} value="Bags">
+									Bags
+								</MenuItem>
+								<MenuItem key={3} value="Shoes">
+									Shoes
+								</MenuItem>
+								<MenuItem key={4} value="Other">
+									Other
+								</MenuItem>
+								<MenuItem key={5} value="Clothing">
+									Clothing
+								</MenuItem>
 							</Select>
 						</Grid>
 					</Grid>

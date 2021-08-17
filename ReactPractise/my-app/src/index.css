@@ -120,6 +120,7 @@ input {
 .form-label {
   font-size: 2.7vh;
   font-family: 'Poppins', sans-serif;
+  color: #000;
 }
 
 /*Labels of the form*/
@@ -162,3 +163,4 @@ footer {
 h3 {
   font-size: medium;
 }
+

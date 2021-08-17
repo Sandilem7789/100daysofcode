@@ -72,7 +72,7 @@ const App = () => {
     display: "grid",
     placeItems: "center",
     fontWeight: "lighter",
-    padding: "10px"
+    width: "auto"
   };
 
   /*******TOGGLE REMINDER******/

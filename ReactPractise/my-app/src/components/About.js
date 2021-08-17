@@ -8,6 +8,7 @@ const About = () => {
             <p>This is a web app I learned to create <br/>
              from Travesty media 
              <br />Now I am Just making it mine</p>
+             <br />
             <Link className="linkText" to="/">
                 <AddButton color="blue" text="Go Back" />
             </Link>

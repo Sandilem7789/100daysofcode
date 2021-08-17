@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     paddingTop: "106.25%", // 16:9 that was "56.25%"
+    alignItem: "center"
   },
   expand: {
     transform: "rotate(0deg)",
@@ -59,7 +60,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
     setExpanded(!expanded);
   };
 
-  const imageUrl = `/images/${task.text}.jpg`;
+  const imageUrl = `/images/${task.itemName}.jpg`;
 
   return (
     <Card className={classes.root}>
@@ -68,7 +69,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         image={imageUrl}
         height='0'
         width='20%'
-        title={task.text}
+        title={task.itemName}
       />
       <Grid container spacing={2}>
         <CardContent 
@@ -80,11 +81,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
           <CardActions 
             disableSpacing 
             style={{ 
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              alignContent: "center",
-              padding: "4px" 
+              padding: "2px" 
             }}>
             <Typography variant='h5' color='white' component='p'>
               <span className="card-labels" style={{fontWeight: "bold"}}>{task.text}</span>
@@ -138,7 +135,11 @@ const CardTask = ({ task, onDelete, onToggle }) => {
           
           <br />
           <Typography variant='body2' color='white' component='p'>
-            <span className="card-labels">Quantity: {task.quantity} items in stock</span>
+            <span className="card-labels">
+              Quantity: 
+              <span style={{fontWeight: "bold"}}>
+                {" "}{task.quantity}
+              </span> items in stock</span>
           </Typography>
           <br />
           <Divider />
