@@ -1,18 +1,3 @@
 {
-  "tasks": [
-    {
-      "text": "test Item",
-      "day": "Test Description",
-      "category": "Bags",
-      "quantity": "1098",
-      "id": 1
-    },
-    {
-      "text": "Drone",
-      "day": "This is a test drone of a test",
-      "category": "Accessories",
-      "quantity": "300",
-      "id": 2
-    }
-  ]
+  "tasks": []
 }

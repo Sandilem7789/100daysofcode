@@ -121,11 +121,16 @@ input {
   font-size: 2.7vh;
   font-family: 'Poppins', sans-serif;
   color: #000;
+  margin-bottom: 10px;
 }
 
 /*Labels of the form*/
 .form-control h3 {
   padding-top: 1.5vh;
+}
+
+.form-textfield {
+  padding-top: 30px;
 }
 
 .form-control-check {

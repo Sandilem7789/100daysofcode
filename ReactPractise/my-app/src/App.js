@@ -9,6 +9,7 @@ import Appbar from "./components/Appbar";
 
 import Grid from "@material-ui/core/Grid";
 import Products from "./components/newDesign/Products";
+import Checkout from "./components/AddItemForm/Checkout";
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -120,6 +121,7 @@ const App = () => {
               {/*TERNARY WITH NO ELSE STATEMENT*/}
               {showAddTask && 
                 <Grid item>
+                  <Checkout onAdd={addTask} />
                   <AddTask onAdd={addTask} />
                 </Grid>
               }

@@ -11,10 +11,10 @@ const Tasks = ({ tasks, onDelete, onToggle }) => {
             {tasks.map((task) => (
                <Grid item xs={4} md={3}>
                   <Task
-                  key={task.id}
-                  task={task}
-                  onDelete={onDelete}
-                  onToggle={onToggle}
+                     key={task.id}
+                     task={task}
+                     onDelete={onDelete}
+                     onToggle={onToggle}
                   />
                </Grid>
             ))}

@@ -60,7 +60,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
     setExpanded(!expanded);
   };
 
-  const imageUrl = `/images/${task.itemName}.jpg`;
+  const imageUrl = `/images/${task.text}.jpg`;
 
   return (
     <Card className={classes.root}>
@@ -69,7 +69,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         image={imageUrl}
         height='0'
         width='20%'
-        title={task.itemName}
+        title={task.text}
       />
       <Grid container spacing={2}>
         <CardContent 
