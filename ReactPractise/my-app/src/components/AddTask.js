@@ -199,7 +199,8 @@ const AddTask = ({ onAdd }) => {
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
             startAdornment={<InputAdornment position='start'>R</InputAdornment>}
-            labelWidth={60}
+            labelWidth={80}
+            fullWidth
           />
         </FormControl>
         <div style={style}>
