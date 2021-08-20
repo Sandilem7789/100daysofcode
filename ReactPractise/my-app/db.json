@@ -1,3 +1,20 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "text": "Drone",
+      "day": "Drone description",
+      "quantity": "",
+      "category": "Sidedish",
+      "price": "3200",
+      "id": 1
+    },
+    {
+      "text": "Drone2",
+      "day": "Another Drone",
+      "quantity": "",
+      "category": "Coldrink",
+      "price": "4500",
+      "id": 2
+    }
+  ]
 }

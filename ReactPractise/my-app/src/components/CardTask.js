@@ -72,19 +72,23 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         title={task.text}
       />
       <Grid container spacing={2}>
-        <CardContent 
-          style={{ 
+        <CardContent
+          style={{
             display: "flex",
             padding: "0px 10px",
-            alignContent: "center" 
-          }}>
-          <CardActions 
-            disableSpacing 
-            style={{ 
-              padding: "2px" 
-            }}>
+            alignContent: "center",
+          }}
+        >
+          <CardActions
+            disableSpacing
+            style={{
+              padding: "2px",
+            }}
+          >
             <Typography variant='h5' color='white' component='p'>
-              <span className="card-labels" style={{fontWeight: "bold"}}>{task.text}</span>
+              <span className='card-labels' style={{ fontWeight: "bold" }}>
+                {task.text}
+              </span>
             </Typography>
             <IconButton
               className={clsx(classes.expand, {
@@ -102,44 +106,21 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         </CardContent>
       </Grid>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
-        
         <CardContent>
           <Typography variant='body1' color='white' component='p'>
-            <span 
-              className="card-labels" 
-              style={{
-                fontWeight: "bold"
-              }}>
-                Description: {task.day}
-            </span>
+            <span className='card-labels'>Description: {task.day}</span>
+            <Typography variant='body1' color='white' component='p'>
+              <span className='card-labels'>Category: </span>
+              <span className='card-labels'>{task.category}</span>
+            </Typography>
           </Typography>
-          <br />
-          <Grid container spacing={2}>
-              <Grid item>
-                <Typography 
-                  variant='body1' 
-                  color='white' 
-                  component='p'
-                >
-                  <span className="card-labels">
-                    Category:
-                  </span>
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography variant='body1' color='white' component='p'>
-                  <span className="card-labels">{task.category}</span>
-                </Typography>
-              </Grid>
-          </Grid>
           
-          <br />
           <Typography variant='body2' color='white' component='p'>
-            <span className="card-labels">
-              Quantity: 
-              <span style={{fontWeight: "bold"}}>
-                {" "}{task.quantity}
-              </span> items in stock</span>
+            <span className='card-labels'>
+              Price :
+              
+              <span style={{ fontWeight: "bold" }}> R{task.price}</span>
+            </span>
           </Typography>
           <br />
           <Divider />
@@ -149,11 +130,11 @@ const CardTask = ({ task, onDelete, onToggle }) => {
               <Button
                 type='button'
                 variant='contained'
-                color="primary"
-                style={{ margin: "0px"}}
+                color='primary'
+                style={{ margin: "0px" }}
               >
                 Update
-                <UpdateSharp/>
+                <UpdateSharp />
               </Button>
             </Grid>
             <Grid item xs={6}>
@@ -163,7 +144,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
                 color='secondary'
                 style={{ margin: "0px" }}
                 onClick={() => onDelete(task.id)}
-                >
+              >
                 Delete
                 <DeleteSharp />
               </Button>

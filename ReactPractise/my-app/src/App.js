@@ -121,7 +121,7 @@ const App = () => {
               {/*TERNARY WITH NO ELSE STATEMENT*/}
               {showAddTask && 
                 <Grid item>
-                  <Checkout onAdd={addTask} />
+                  {/*<Checkout onAdd={addTask} />*/}
                   <AddTask onAdd={addTask} />
                 </Grid>
               }
