@@ -25,7 +25,7 @@ import { Divider } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: "auto",
     background: "white",
     color: "secondary",
   },
@@ -60,7 +60,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
     setExpanded(!expanded);
   };
 
-  const imageUrl = `/images/${task.text}.jpg`;
+  const imageUrl = `/images/menu-Items/${task.text}.jpg`;
 
   return (
     <Card className={classes.root}>
@@ -118,7 +118,6 @@ const CardTask = ({ task, onDelete, onToggle }) => {
           <Typography variant='body2' color='white' component='p'>
             <span className='card-labels'>
               Price :
-              
               <span style={{ fontWeight: "bold" }}> R{task.price}</span>
             </span>
           </Typography>

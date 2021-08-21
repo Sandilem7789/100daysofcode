@@ -57,11 +57,12 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
-    fontFamily: 'Poppins'
+    fontFamily: 'Poppins',
   },
   root: {
     display: "flex",
     flexWrap: "wrap",
+    fontFamily: "Poppins"
   },
   margin: {
     margin: theme.spacing(1),
@@ -195,12 +196,13 @@ const AddTask = ({ onAdd }) => {
                 />
               </Grid>
             </Grid>
-            <div className={classes.buttons} style={{paddingBottom: "40px", paddingTop: "20px"}}>
+            <div className={classes.buttons} style={{paddingBottom: "30px"}}>
               <Button
                 type='submit'
                 value='Save Item'
-                variant='outlined'
+                variant='contained'
                 color='primary'
+                className={classes.button}
               >
                 Save Item
               </Button>
