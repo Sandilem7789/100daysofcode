@@ -27,7 +27,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: "auto",
     background: "white",
-    color: "secondary",
+    color: "#000",
+    marginRight: "15px",
+    marginLeft: "15px",
+    marginTop: "15px",
+
   },
   media: {
     paddingTop: "106.25%", // 16:9 that was "56.25%"
@@ -35,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   expand: {
     transform: "rotate(0deg)",
-    marginLeft: "auto",
+    marginRight: "auto",
     color: "black",
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
@@ -71,7 +75,6 @@ const CardTask = ({ task, onDelete, onToggle }) => {
         width='20%'
         title={task.text}
       />
-      <Grid container spacing={2}>
         <CardContent
           style={{
             display: "flex",
@@ -79,32 +82,37 @@ const CardTask = ({ task, onDelete, onToggle }) => {
             alignContent: "center",
           }}
         >
+          <Grid container spacing={1}>
           <CardActions
             disableSpacing
             style={{
               padding: "2px",
             }}
           >
-            <Typography variant='h5' color='white' component='p'>
-              <span className='card-labels' style={{ fontWeight: "bold" }}>
-                {task.text}
-              </span>
-            </Typography>
-            <IconButton
-              className={clsx(classes.expand, {
-                [classes.expandOpen]: expanded,
-              })}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label='show more'
-              item
-              xs={6}
-            >
-              <ExpandMoreIcon />
-            </IconButton>
+            <Grid item xs={12}>
+              <Typography variant='h5' color='white' component='p'>
+                <span className='card-labels' style={{ fontWeight: "bold" }}>
+                  {task.text}
+                </span>
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <IconButton
+                className={clsx(classes.expand, {
+                  [classes.expandOpen]: expanded,
+                })}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label='show more'
+                item
+                xs={6}
+                >
+                <ExpandMoreIcon />
+              </IconButton>
+            </Grid>
           </CardActions>
+        </Grid>
         </CardContent>
-      </Grid>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
           <Typography variant='body1' color='white' component='p'>
@@ -130,7 +138,7 @@ const CardTask = ({ task, onDelete, onToggle }) => {
                 type='button'
                 variant='contained'
                 color='primary'
-                style={{ margin: "0px" }}
+                style={{ margin: "0px", justifySelf: "center" }}
               >
                 Update
                 <UpdateSharp />
