@@ -17,6 +17,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Button from "@material-ui/core/Button";
 
 const drawerWidth = 240;
 
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "10px",
     paddingBottom: "0px",
     margin: "0",
+    boxshadow: "0px",
     color: 'black',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -121,6 +123,9 @@ export default function Appbar() {
           <Typography variant="h5" noWrap>
             Thenga.com
           </Typography>
+          <Button>
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer

@@ -11,6 +11,8 @@ import Grid from "@material-ui/core/Grid";
 import Products from "./components/newDesign/Products";
 import Checkout from "./components/AddItemForm/Checkout";
 
+import Landing from "./components/Landing/Landing";
+
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
@@ -64,7 +66,6 @@ const App = () => {
   const deleteTask = async (id) => {
     /**Deleting on the back-end(db.json)**/
     await fetch(`${url}/${id}`, { method: "DELETE" });
-
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
@@ -103,7 +104,7 @@ const App = () => {
 
   return (
     <Router>
-			<Appbar className="appBar"/>
+			<Appbar className="appBar" elevation={0}/>
         <Grid container style={style}>
           <Grid item>
             <Header
@@ -145,6 +146,9 @@ const App = () => {
         />
         <Route path='/about' component={About} />
         <Route path='/products' component={Products} />
+        <Grid container spacing={3}>
+          <Route path='/customer' component={Landing} />
+        </Grid>
         <Grid style={style}>
           <Footer />
         </Grid>
