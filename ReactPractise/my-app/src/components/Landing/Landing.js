@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Item from "../CustomerModule/Item"
 
 const useStyles = makeStyles({
   root: {
@@ -27,32 +28,17 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Landing() {
+export default function Landing({ tasks, }) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Grid container spacing={3}>
-        <Grid item xs={12}>
-      <Card className={classes.root} variant='outlined'>
-        <CardContent className="cardDescription">
-          <Typography
-            className={classes.title}
-            color='textSecondary'
-            gutterBottom
-            variant="h5"
-            component="h2"
-            align="center"
-          >
-            
-          </Typography>
-          
-        </CardContent>
-        <CardActions>
-          <Button size='small'>Learn More</Button>
-        </CardActions>
-      </Card>
-    </Grid>
+    <Grid container spacing={2}>
+      {tasks.map((task) => (
+        <Grid item xs={12} sm={4}>
+					<Item task={task} />
+        </Grid>
+      ))}
     </Grid>
   );
 }

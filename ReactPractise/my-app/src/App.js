@@ -144,10 +144,16 @@ const App = () => {
             </>
           )}
         />
-        <Route path='/about' component={About} />
+        <Route path='/about'>
+          <About />
+        </Route>
         <Route path='/products' component={Products} />
         <Grid container spacing={3}>
-          <Route path='/customer' component={Landing} />
+          <Route path='/customer'>
+            <Landing
+              tasks={tasks}
+            />
+          </Route>
         </Grid>
         <Grid style={style}>
           <Footer />
