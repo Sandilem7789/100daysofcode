@@ -29,9 +29,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "auto",
     background: "white",
     color: "#000",
-    marginRight: "0px",
-    marginLeft: "0px",
-    marginTop: "0px",
+    marginRight: "30px",
+    marginLeft: "30px",
+    marginTop: "20px",
 
   },
   media: {
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
 	itemIcons: {
-		color: "black",
+		color: "white",
 	},
   expandOpen: {
     transform: "rotate(180deg)",
@@ -59,6 +59,12 @@ const useStyles = makeStyles((theme) => ({
 		width: "2.5vh",
 		height: "2.5vh"
   },
+	button: {
+		fontWeight: "bold",
+		backgroundColor: "black",
+		color: "white",
+		left: "50%"
+	}
 }));
 
 const Item = ({ task }) => {
@@ -113,10 +119,10 @@ const Item = ({ task }) => {
                 <ExpandMoreIcon />
               </IconButton>
             </Grid>
-            <Grid item xs={4}>
-              <Button variant='outlined' color='primary' size="medium">
-                <ShoppingCartRounded className={classes.itemIcons} />
+            <Grid item xs={8}>
+              <Button variant='contained' size="large" className={classes.button}>
                 R{task.price}
+                <ShoppingCartRounded className={classes.itemIcons} />
               </Button>
             </Grid>
           </CardActions>
