@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   expand: {
     transform: "rotate(0deg)",
-    marginRight: "auto",
+    marginLeft: "auto",
     color: "black",
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
@@ -61,9 +61,10 @@ const useStyles = makeStyles((theme) => ({
   },
 	button: {
 		fontWeight: "bold",
-		backgroundColor: "black",
-		color: "white",
-		left: "50%"
+		color: "yellow",
+		left: "40%",
+		marginLeft: "auto"
+
 	}
 }));
 
@@ -78,7 +79,6 @@ const Item = ({ task }) => {
 
   return (
     <Card className={classes.root}>
-      {console.log(task.id)}
       <CardMedia
         className={classes.media}
         image={imageUrl}
@@ -97,10 +97,10 @@ const Item = ({ task }) => {
           <CardActions
             disableSpacing
             style={{
-              padding: "2px",
+              padding: "20px",
             }}
           >
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <Typography variant='h5' color='white' component='p'>
                 <span className='card-labels' style={{ fontWeight: "bold" }}>
                   {task.text}
@@ -120,7 +120,7 @@ const Item = ({ task }) => {
               </IconButton>
             </Grid>
             <Grid item xs={8}>
-              <Button variant='contained' size="large" className={classes.button}>
+              <Button variant='contained' color="primary" size="large" className={classes.button}>
                 R{task.price}
                 <ShoppingCartRounded className={classes.itemIcons} />
               </Button>

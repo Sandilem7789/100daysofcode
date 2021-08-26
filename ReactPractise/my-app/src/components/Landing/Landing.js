@@ -35,7 +35,7 @@ export default function Landing({ tasks, }) {
   return (
     <Grid container spacing={2}>
       {tasks.map((task) => (
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={6} md={4}>
 					<Item task={task} />
         </Grid>
       ))}
