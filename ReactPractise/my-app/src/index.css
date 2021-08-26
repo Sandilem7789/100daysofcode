@@ -168,3 +168,13 @@ footer {
 h3 {
   font-size: medium;
 }
+
+.button {
+  font-weight: "bold";
+  color: #fff;
+}
+
+.button-container {
+  display: "flex";
+  flex-direction: "row";
+}

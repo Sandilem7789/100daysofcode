@@ -59,12 +59,15 @@ const useStyles = makeStyles((theme) => ({
 		width: "2.5vh",
 		height: "2.5vh"
   },
+  buttonCardContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end"
+  },
 	button: {
 		fontWeight: "bold",
-		color: "yellow",
-		left: "40%",
-		marginLeft: "auto"
-
+		color: "white",
+    order: 2
 	}
 }));
 
@@ -100,13 +103,6 @@ const Item = ({ task }) => {
               padding: "20px",
             }}
           >
-            <Grid item xs={6}>
-              <Typography variant='h5' color='white' component='p'>
-                <span className='card-labels' style={{ fontWeight: "bold" }}>
-                  {task.text}
-                </span>
-              </Typography>
-            </Grid>
             <Grid item xs={4}>
               <IconButton
                 className={clsx(classes.expand, {
@@ -119,12 +115,21 @@ const Item = ({ task }) => {
                 <ExpandMoreIcon />
               </IconButton>
             </Grid>
-            <Grid item xs={8}>
-              <Button variant='contained' color="primary" size="large" className={classes.button}>
-                R{task.price}
-                <ShoppingCartRounded className={classes.itemIcons} />
-              </Button>
-            </Grid>
+            <div className={classes.buttonCardContainer}>
+              <Grid item xs={6}>
+                <Typography variant='h5' color='white' component='p'>
+                  <span className='card-labels' style={{ fontWeight: "bold" }}>
+                    {task.text}
+                  </span>
+                </Typography>
+              </Grid>
+              <Grid item xs={6} style={{paddingRight: "45px"}}>
+                <Button variant='contained' color="primary" size="large" className={classes.button}>
+                  R{task.price}
+                  <ShoppingCartRounded className={classes.itemIcons} />
+                </Button>
+              </Grid>
+            </div>
           </CardActions>
         </Grid>
       </CardContent>

@@ -104,7 +104,11 @@ const App = () => {
 
   return (
     <Router>
-			<Appbar className="appBar" elevation={0}/>
+			<Appbar className="appBar" elevation={0}
+        style={{
+          overflow: "hidden"
+        }}
+      />
         <Grid container style={style}>
           <Grid item>
             <Header
